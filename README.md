@@ -19,3 +19,8 @@ As I said this website started as a PHP learning atempt so you might expect the 
     </li>
     <li>Forum module is in very very early stages and is not working</li>
 </ul>
+
+#Installation instructions
+Move everything to to your HTDOCS now open up "For Install" folder<br>
+Run those 2 SQL files one is to update your account database and 1 is the base of the WEB DATABASE *Note the website is adapted for 12 Game Master ranks<br>
+Now move to core folder open "Config.php" and put there your database informations
