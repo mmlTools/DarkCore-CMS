@@ -1,0 +1,847 @@
+.arm-criteria{
+  border: 1px solid #383838;
+  width: 184px;
+  height: 30px;
+  background: #101010;
+  text-align: center;
+  color: #ECE7E0;
+  float: right;
+  margin-right: 3px;
+   box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
+}
+.arm-criteria::-webkit-input-placeholder 		{color: #383838;}
+.arm-criteria:-moz-placeholder 					{color: #383838;}
+.arm-criteria::-moz-placeholder 				{color: #383838;}
+.arm-criteria:-ms-input-placeholder 			{color: #383838;}
+.res-disp{
+    border: 1px solid #383838;
+    width: 225px;
+    height: 85px;
+    margin-left: 5px;
+    padding: 5px;
+    background: #101010;
+    margin-top: 4px;
+    text-align: center;
+    color: #b0b0b0;
+    float: left;
+}
+.resimg{
+	border-radius: 10px;
+    float: left;
+    margin-left: 80px;
+}
+.res-disp a:link 		{color:#A29F00;text-decoration: none;}
+.res-disp a:visited 		{color:#A29F00;text-decoration: none;}
+.res-disp a:hover 		{color:#E2E1A6;text-decoration: none;}
+.res-disp a:active       	{color:#A29F00;text-decoration: none;}
+
+.arm-result{
+border: 1px solid #383838;
+width: 250px;
+height: 30px;
+background: #101010;
+margin-top:4px;
+text-align: left;
+color: #a3620a;
+}
+.arm-result:hover{
+color: #b0b0b0;
+cursor: pointer;
+}
+#crt-submit{
+ border: 1px solid #1E1F1E;
+    width: 120px;
+    height: 34px;
+    background: #4C7D47;
+    text-align: center;
+    color: #fff;
+    float: right;
+	box-shadow:  0px 3px 8px #000; 
+}
+#crt-submit:hover{
+ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
+ cursor:pointer;
+}
+#crt-content{
+    border: 1px solid #383838;
+    width: 640px;
+    height: 22px;
+    background: #101010;
+    color: #009966;
+    float: left;
+    margin-right: 3px;
+    padding: 5px;
+	 box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
+ }
+.changelog-box{
+ width: 635px;
+ padding: 15px;
+ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ display: inline-block;vertical-align:top;
+ font-size:12px;
+ overflow:hidden;
+ margin-bottom: 8px;
+}
+.changelog-title{
+ width: 480px;
+ text-align: left;
+ display: inline-block;vertical-align:top;
+ color:#b0b0b0;
+ font-size:16px;
+ font-weight:bold;
+}
+
+.changelog-date{
+ width: 155px;
+ text-align: right;
+ display: inline-block;vertical-align:top;
+ color:#b0b0b0;
+ font-size:16px;
+ font-weight:bold;
+}
+.changelog-body{
+ margin-left: 15px;
+ text-align: left;
+ color:#00CC66;
+ font-size:14px;
+}
+
+#characters-list{
+    width: 969px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 3px 8px #000;
+    border: 1px solid #383838;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.character-box{
+    width: 120px;
+    height: 130px;
+    margin-left: 8px;
+    margin-bottom: 6px;
+	margin-top:6px;
+    border: 1px solid #383838;
+	background: #181818;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.character-box a:link 		{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.character-box a:visited 	{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.character-box a:hover 		{color:#FF9900;  text-shadow:5px 5px 10px black;}
+.character-box a:active       {color:#a3620a;  text-shadow:5px 5px 10px black;}
+
+.character-box:hover{
+ background: rgba(255, 255, 255, 0.1);
+}
+.char-name{
+ width:25%;
+ display: inline-block;
+ vertical-align:top;
+ font-size:16px;
+
+ font-weight: bold;
+ }
+.char-info-level{
+ width:25%;
+ display: inline-block;
+ vertical-align:top;
+ font-size:16px;
+ color: #909090;
+ }
+ .char-info-level .text{
+ color:#fff;
+ }
+.char-info-race{
+ width:22%;
+ display: inline-block;
+ vertical-align:top;
+ font-size:16px;
+ color: #909090;
+ }
+.char-info-class{
+ width:22%;
+ display: inline-block;
+ vertical-align:top;
+ font-size:16px;
+ color: #909090;
+ }
+.item-frame{
+max-width:350px;
+background-color:rgba(0, 0, 0, 0.7);
+border: 1px solid #C0C0C0 ;
+border-radius: 5px;
+margin-top:5px;
+font-size:12px;
+padding: 5px;
+color: #fff;
+font-family: 'Open Sans',Arial,"Helvetica Neue",Helvetica,sans-serif;
+float:left;
+margin-top:-1px;
+}
+.item-frame a:link 		{color:#1eff00;}
+.item-frame a:visited 	{color:#1eff00;}
+.item-frame a:hover 		{color:#fff;}
+.item-frame a:active 	{color:#1eff00;}
+
+.armerror{
+font-size:14px;
+text-align:center;
+color: #fff;
+padding-top:5px;
+padding-bottom:5px;
+}
+.armory-itemicon{
+ background-color:rgba(0, 0, 0, 0.5);
+ border: 1px solid #C0C0C0 ;
+ border-radius: 5px;
+ float:left;
+ margin-right: 3px;
+ position: relative; 
+  -webkit-box-shadow: inset 0 0 10px 10px #fff;    
+    -moz-box-shadow: inset 0 0 10px 10px #fff;
+    box-shadow: inset 0 0 10px 10px #fff;
+}
+.char-itemicon{
+ background-color:rgba(0, 0, 0, 0.5);
+ border: 1px solid #C0C0C0 ;
+ border-radius: 5px;
+ float:left;
+ margin-right: 3px;
+ position: relative; 
+ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
+}
+
+.item_name{
+ display: inline-block;
+ vertical-align:top;
+}
+.armory-itemlevel{
+
+ display: inline-block;
+ vertical-align:top;
+ color:#FFCC00;
+}
+.armory-bonding{
+
+ display: inline-block;
+ vertical-align:top;
+}
+.armory-itemclass{
+
+ float:right;
+ margin-left: 50px;
+ }
+.armory-inventorytype{
+
+ float:left;
+ }
+.armory-dmgmin{
+
+ float:left;
+ }
+.armory-dmgmax{
+
+ float:left;
+ }
+.armory-dmdiv{
+
+ float:left;
+ padding-left: 2px;
+ padding-right: 2px;
+ }
+.armory-speed{
+
+ float:right;
+ margin-left: 50px;
+ }
+ .stats_1{
+
+ float:left;
+ }
+ .durability{
+
+ float:left;
+ }
+.sok_red{
+ width:14px;
+ height:14px;
+ margin-top:3px;
+ float:left;
+ background: url(../images/socket-red.gif);
+ }
+ .sok_red_label{
+ margin-top:3px;
+ margin-left:4px;
+ float:left;
+ color: #585858;
+ }
+ .sok_blue{
+ width:14px;
+ height:14px;
+ margin-top:3px;
+ float:left;
+ background: url(../images/socket-blue.gif);
+ }
+ .sok_blue_label{
+ margin-top:3px;
+ margin-left:4px;
+ float:left;
+ color: #585858;
+ }
+ .sok_yellow{
+ width:14px;
+ height:14px;
+ margin-top:3px;
+ float:left;
+ background: url(../images/socket-yellow.gif);
+ }
+ .sok_yellow_label{
+ margin-top:3px; 
+ margin-left:4px;
+ float:left;
+ color: #585858;
+ }
+ .sok_meta{
+ width:14px;
+ height:14px;
+ margin-top:3px;
+ float:left;
+ background: url(../images/socket-meta.gif);
+ }
+ .sok_meta_label{
+ margin-top:3px;
+ margin-left:4px;
+ float:left;
+ color: #585858;
+ }
+ .lvlreq{
+
+ float:left;
+ }
+.stats_2{
+
+ float:left;
+ }
+.spell{
+
+ float:left;
+ }
+ .submitinfo{
+ width: 150px;
+ background-color:rgba(60, 245, 68, 0.7);
+ border: 1px solid #C0C0C0 ;
+ border-radius: 5px;
+ float:left;
+ margin-right: 3px;
+ padding:3px;
+}
+#items-list{
+    width: 969px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 3px 8px #000;
+    border: 1px solid #383838;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.item-line{
+    width: 964px;
+    height: 25px;
+    margin-left: -1px;
+    margin-top: -1px;
+    border: 1px solid #383838;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+.item-line a:link 		{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.item-line a:visited 	{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.item-line a:hover 		{color:#FF9900;  text-shadow:5px 5px 10px black;}
+.item-line a:active       {color:#a3620a;  text-shadow:5px 5px 10px black;}
+
+.item-line:hover{
+ background: rgba(255, 255, 255, 0.1);
+}
+ .arm-title{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #383838;
+    background: rgba(0,0,0,0.3);
+    overflow: hidden;
+    color: #4C7D47;
+    min-height: 32px;
+    font-size: 24px;
+    width: 100%;
+    float: left;
+    text-align: center;
+ }
+ .arm-divider{
+width: 100%;
+height: 1px;
+background: #585858;
+float:left;
+margin-top: 4px;
+margin-bottom: 4px;
+display: inline-block;
+vertical-align: top;
+}
+.armory-item-name{
+ width:400px;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ }
+ .item-class-l{
+ width:120px;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ text-align: right;
+ }
+  .item-lvl{
+width:100px;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ text-align: center;
+ margin-left: 70px;
+ }
+  .item-reqlvl{
+ width:100px;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ text-align: center;
+ }
+.item-invtype-l{
+ width:120px;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ }
+ #guilds-list{
+ width: 969px;
+ background: rgba(0, 0, 0, 0.6);
+ box-shadow: 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ display: inline-block;
+ vertical-align:top;
+ font-size:14px;
+}
+.guild-line{
+ width: 964px;
+  height: 25px;
+  margin-left: -1px;
+  margin-top: -1px;
+  border: 1px solid #383838;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+.guild-line a:link 		{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.guild-line a:visited 	{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.guild-line a:hover 		{color:#FF9900;  text-shadow:5px 5px 10px black;}
+.guild-line a:active       {color:#a3620a;  text-shadow:5px 5px 10px black;}
+
+.guild-line:hover{
+ background: rgba(255, 255, 255, 0.1);
+}
+
+.armory-guild-name{
+ width:45%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ }
+ .guild-leader{
+ width:20%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ }
+.guild-members{
+ width:20%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ }
+#creature-list{
+ width: 670px;
+ background: rgba(0, 0, 0, 0.6);
+ box-shadow: 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ display: inline-block;
+ vertical-align:top;
+ font-size:14px;
+}
+.quest-line{
+  width: 665px;
+  height: 25px;
+  margin-left: -1px;
+  margin-top: -1px;
+  box-shadow: 0px 3px 8px #000;
+  border: 1px solid #383838;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+.quest-line a:link 		{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.quest-line a:visited 	{color:#a3620a;  text-shadow:5px 5px 10px black;}
+.quest-line a:hover 		{color:#FF9900;  text-shadow:5px 5px 10px black;}
+.quest-line a:active       {color:#a3620a;  text-shadow:5px 5px 10px black;}
+
+.quest-line:hover{
+ background: rgba(255, 255, 255, 0.1);
+}
+
+.armory-creature-name{
+ width:45%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ }
+ .creature-level{
+ width:20%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ text-align: right;
+ }
+.creature-health{
+ width:20%;
+ margin-top:5px;
+ float:left;
+ font-size: 14px;
+ margin-left:5px;
+ color: #909090;
+ }
+ 
+ #character-main-frame{
+ width:670px;
+ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; 
+ max-height: 381px;
+ }
+ #character-right{
+ width: 280px;
+ margin-left: 16px;
+ display: inline-block;
+ vertical-align:top;
+}
+ #character-left{
+ width: 700px;
+ display: inline-block;
+ vertical-align:top;
+}
+ .left-character-panel{
+ width: 670px;
+ background: #202020 ;
+ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ margin-bottom: 15px;
+ }
+ .itmicn{
+ display: inline-block;
+ vertical-align:top;
+ width: 30px;
+ height: 30px;
+ margin-bottom: 10px;
+ }
+  .itmicn1{
+ display: inline-block;
+ vertical-align:top;
+ width: 30px;
+ height: 30px;
+ }
+  .tablecls1{
+  width:30px;
+ display: inline-block;
+ vertical-align:top;
+ margin-left: 15px;
+ margin-top: 15px;
+ }
+  .tablecls2{
+  width:240px;
+  text-align:center;
+ display: inline-block;
+ vertical-align:top;
+ margin-left: 15px;
+ margin-top: 15px;
+ }
+ .stats1{
+ display: inline-block;
+ vertical-align:top;
+ width: 220px;
+ height: 250px;
+ margin-bottom: 50px; 
+ }
+ .char-right-box{
+ width: 250px;
+ background: #202020 ;
+ margin:auto;
+ padding: 15px;
+ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ margin-bottom: 15px;
+ overflow:hidden;
+ }
+  .char-right-info1{
+ display: inline-block;
+ vertical-align:top;
+ width: 360px;
+ }
+  .char-right-info{
+  display: inline-block;
+ vertical-align: top;
+ width: 260px;
+ height: 320px;
+ margin-left: 5px;
+ border: 1px solid #383838;
+ background: rgba(0,0,0,0.7);
+ margin-top: 15px;
+ margin-bottom: 25px;
+ padding: 15px;
+ }
+ 
+ 
+ 
+ #realm-main-frame{
+ width:640px;
+ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; 
+ height: 84px;
+ padding:15px;
+ }
+ #realm-right{
+ width: 280px;
+ margin-left: 16px;
+ display: inline-block;
+ vertical-align:top;
+}
+ #realm-frame{
+ width: 1000px;
+ display: inline-block;
+ vertical-align:top;
+     background: url('../images/headers/realm-header.png') no-repeat;
+}
+
+ .frame-realm-panel {
+     width: 1000px;
+     margin-bottom: 15px;
+ }
+ #online-players-table{
+     width: 900px;
+     height: 218px;
+     margin: auto;
+     overflow: hidden;
+ }
+.statistic-portrait{
+    width: 95px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+}
+.statistic-portrait .image{}
+.statistic-portrait .percent{
+    font-size: 24px;
+    color: #8CC16F;
+}
+.statistic-portrait .label{
+    font-size: 16px;
+}
+.portrait-left{
+    width:550px;
+    display: inline-block;
+    vertical-align: top;
+}
+.portrait-right{
+    width: 400px;
+    height: 250px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.factionbar{
+    width:180px;
+    max-height:250px;
+    background:#3399FF;
+    display: inline-block;
+    vertical-align: bottom;
+    box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000;
+}
+.factiondivider{
+    height:98%;
+    width:1px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+ .online-players-line{
+     height: 25px;
+     border: 1px solid #2B2B2B;
+     margin-top: -1px;
+     background: #282828 url('../images/hoverblack.png');
+ }
+.online-players-show{
+    width: 280px;
+    height: 25px;
+    margin: auto;
+    border: 1px solid #505050;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    background: #282828 url('../images/button-300.png');
+    border-radius: 5px;
+    box-shadow: 0px 3px 8px #000;
+    color: #6CA29B;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+}
+.online-players-show:hover{ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; cursor: pointer;}
+.realm-right-box{
+ width: 250px;
+ background: #202020 ;
+ margin:auto;
+ padding: 15px;
+ box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; 
+ border: 1px solid #383838;
+ margin-bottom: 15px;
+ overflow:hidden;
+ }
+
+  .realm-titles{
+ color:#a3620a;
+ font-size:24px;
+ font-weight:bold;
+ }
+ .realm-divider{
+width: 100%;
+height: 1px;
+background: #585858;
+float:left;
+margin-top: 1px;
+margin-bottom: 4px;
+display: inline-block;
+vertical-align: top;
+}
+.realm-name{
+float: right;
+font-size: 34px;
+color: #fff;
+color:#fff;
+text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #00CCCC,
+               0 0 70px  #0099CC,
+               0 0 80px  #0099CC,
+               0 0 100px #0099CC,
+               0 0 150px #0099CC;
+}
+
+.chlist-td{
+    padding: 3px;
+    text-align: center;
+    width: 170px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom:2px;
+}
+
+
+.chlist-td a:link 		{color:#a3620a;text-decoration: none;  text-shadow:5px 5px 10px black;}
+.chlist-td a:visited 	{color:#a3620a;text-decoration: none;  text-shadow:5px 5px 10px black;}
+.chlist-td a:hover 		{color:#FF9900;text-decoration: none;  text-shadow:5px 5px 10px black;}
+.chlist-td a:active       	{color:#a3620a;text-decoration: none;  text-shadow:5px 5px 10px black;}
+
+
+.arm-pagination {
+    height:25px;
+	font-size: 18px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.arm-pagination a:link 		{color:#8EC192;text-decoration: none;}
+.arm-pagination a:visited 	{color:#8EC192;text-decoration: none;}
+.arm-pagination a:hover 		{color:#02FB16;text-decoration: none;}
+.arm-pagination a:active       	{color:#8EC192;text-decoration: none;}
+.a-p-g{display: table;
+  margin: 0 auto;}
+.pag-link{
+padding:5px;
+float:left;
+border: 1px solid #383838;
+text-align:center;
+margin-left: 5px;
+color:#8EC192;
+box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
+}
+.pag-link-current{
+padding:5px;
+float:left;
+text-align:center;
+margin-left: 5px;
+color:#585858 ;
+border: 1px solid #383838;
+box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
+}
+.pag-link-disabled{
+padding:5px;
+float:left;
+text-align:center;
+margin-left: 5px;
+color:#585858 ;
+border: 1px solid #383838;
+box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
+}
+
+#searchdiv {
+  width: 237px;
+  background: rgba(0,0,0,0.3);
+  margin: auto;
+  font-size:13px;
+  box-shadow: 0px 3px 8px #000;
+  border: 1px solid #383838;
+  padding: 5px;
+  margin-top: 5px;
+  color: #006633;
+  float: right;
+}	
+
+#searchdiv-er {
+  width: 237px;
+  background: rgba(0,0,0,0.3);
+  margin: auto;
+  font-size:13px;
+  box-shadow: 0px 3px 8px #000;
+  border: 1px solid #383838;
+  padding: 5px;
+  margin-top: 5px;
+  color: #FF0000;
+  float: right;
+}	
