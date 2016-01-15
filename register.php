@@ -8,7 +8,7 @@
 	<?php include 'menu.php';
 	        include 'core/functions/global_functions.php';
 	 if (isset($_GET["regerror"])){
-         get_reg_errors($_GET['errtype']);
+         get_reg_errors($_GET['regerror']);
     } ?>
 	</div>
 	<div id='content'>
