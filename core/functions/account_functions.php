@@ -66,6 +66,7 @@ class account {
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 		$stmt = $con->prepare("SELECT CustomRank,username,email,reg_mail,joindate,last_ip,foundus,id,failed_logins,locked,last_login,online,expansion,mutetime,age,avatar,mutereason,muteby,vp,dp,VipLevel,total_votes,country FROM ".$DB_AUTH.".account WHERE username=?");
+		if( $con !== FALSE) {
 		$stmt->bind_param('s', $username);
 		$stmt->execute();
 		$stmt->bind_result($_CustomRank,$_username,$_email,$_reg_mail,$_joindate,$_last_ip,$_foundus,$_acc_id,$_failed_logins,$_locked,$_last_login,$_online,$_expansion,$_mutetime,$_age,$_avatar,$_mutereason,$_muteby,$_vp,$_dp,$_VipLevel,$_total_votes,$_country);
@@ -82,6 +83,7 @@ class account {
 		$stmt->close();
 		$con->close();
 	}
+}
 	
 	function get_real_rank($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;

@@ -72,7 +72,7 @@
 					<?php  if ($totals->total_characters == 0) echo "<div class='armerror'>No results matches your criteria</div>"; else { $arm_char = get_basic_char($criteria,$_GET['page'],$limit); for ($i=1;$i<=count($arm_char);$i++){?>
 						<a href='character?c=<?php echo $arm_char[$i]['name'];?>' class="skinnytip" data-text="<div class='miniinfo'>Click for to see <?php echo $arm_char[$i]['name'];?>'s stats</div>">
 							<div class='character-box'>
-								<div class='portrait' style='text-align:center;'><img src='images/portraits/<?php echo $arm_char[$i]['class']; ?>.png' width='75' height='75'/></div>
+								<div class='portrait' style='text-align:left;'><img src='images/portraits/race/<?php echo $arm_char[$i]['class']; ?>.png' width='75' height='75'/></div>
 								<div style='margin-top:0px;'>
 									<div class='char-info-level'><span class='text'><?php echo $arm_char[$i]['level'];?></span></div>
 									<div class='char-info-race'><img src='images/char/race/<?php echo $arm_char[$i]['race'];?>-<?php echo $arm_char[$i]['gender'];?>.gif' /></div>
