@@ -13,4 +13,5 @@ ALTER TABLE account
 	ADD `country` VARCHAR(255) NULL DEFAULT NULL,
 	ADD `age` VARCHAR(255) NULL DEFAULT NULL,
 	ADD `foundus` VARCHAR(255) NULL DEFAULT NULL,
-	ADD `avatar` VARCHAR(255) NOT NULL DEFAULT 'images/avatars/darksoke.png';
+	ADD `avatar` VARCHAR(255) NOT NULL DEFAULT 'images/avatars/darksoke.png'
+	ADD 'CustomRank' VARCHAR(50) NOT NULL DEFAULT 'Member';
