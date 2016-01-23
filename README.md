@@ -1,6 +1,7 @@
 # DarkCore-CMS
 This is a Trinitycore Website CMS under development<br>
 Author: Darksoke<br>
+Contributors: <a href="https://github.com/demonreborn">Demonreborn<a>
 Web: http://mmltools.com<br>
 
 This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS<br><br>
