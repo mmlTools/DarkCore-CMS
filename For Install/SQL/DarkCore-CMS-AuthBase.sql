@@ -14,8 +14,12 @@ ALTER TABLE account
 	ADD `age` VARCHAR(255) NULL DEFAULT NULL,
 	ADD `foundus` VARCHAR(255) NULL DEFAULT NULL,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ADD `avatar` VARCHAR(255) NOT NULL DEFAULT 'images/avatars/darksoke.png';
 =======
 	ADD `avatar` VARCHAR(255) NOT NULL DEFAULT 'images/avatars/darksoke.png'
 >>>>>>> 125730e55fe04220c23a8e2220fe2f11434ba6b3
+=======
+	ADD `avatar` VARCHAR(255) NOT NULL DEFAULT 'images/avatars/darksoke.png'
+>>>>>>> origin/master
 	ADD 'CustomRank' VARCHAR(50) NOT NULL DEFAULT 'Member';
