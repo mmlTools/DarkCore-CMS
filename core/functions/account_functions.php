@@ -2,56 +2,66 @@
 function get_rank_byid($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT gmlevel FROM ".$DB_AUTH.".account_access WHERE id=?");
-		$stmt->bind_param('i', $id);
-		$stmt->execute();
-		$stmt->bind_result($gmlevel);
-		while ($stmt->fetch()) {
-			return $gmlevel;
+		$sql = "SELECT gmlevel FROM ".$DB_AUTH.".account_access WHERE id=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($gmlevel);
+			while ($stmt->fetch()) {
+				return $gmlevel;
+			}
+			$stmt->close();
 		}
-		$stmt->close();
 		$con->close();
 	}
 function get_username_byid($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT username FROM ".$DB_AUTH.".account WHERE id=?");
-		$stmt->bind_param('i', $id);
-		$stmt->execute();
-		$stmt->bind_result($username);
-		while ($stmt->fetch()) {
-			return $username;
+		$sql = "SELECT username FROM ".$DB_AUTH.".account WHERE id=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($username);
+			while ($stmt->fetch()) {
+				return $username;
+			}
+			$stmt->close();
 		}
-	$stmt->close();
 	$con->close();
 	}
 
 function get_vip_byid($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT VipLevel FROM ".$DB_AUTH.".account WHERE id=?");
-		$stmt->bind_param('i', $id);
-		$stmt->execute();
-		$stmt->bind_result($viplevel);
-		while ($stmt->fetch()) {
-			return $viplevel;
+		$sql = "SELECT VipLevel FROM ".$DB_AUTH.".account WHERE id=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($viplevel);
+			while ($stmt->fetch()) {
+				return $viplevel;
+			}
+			$stmt->close();
 		}
-	$stmt->close();
 	$con->close();
 	}
+	
 function get_avatar_byid($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT avatar FROM ".$DB_AUTH.".account WHERE id=?");
-		$stmt->bind_param('i', $id);
-		$stmt->execute();
-		$stmt->bind_result($avatar);
-		while ($stmt->fetch()) {
-			return $avatar;
+		$sql = "SELECT avatar FROM ".$DB_AUTH.".account WHERE id=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($avatar);
+			while ($stmt->fetch()) {
+				return $avatar;
+			}
+			$stmt->close();
 		}
-	$stmt->close();
 	$con->close();
 	}
+	
 class account {
 	public $CustomRank;      public $failed_logins;     public $mutereason;      public $country;
 	public $username;        public $locked;            public $muteby;          public $age; 
@@ -65,22 +75,23 @@ class account {
 	function get_acc_info($username){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT CustomRank,username,email,reg_mail,joindate,last_ip,foundus,id,failed_logins,locked,last_login,online,expansion,mutetime,age,avatar,mutereason,muteby,vp,dp,VipLevel,total_votes,country FROM ".$DB_AUTH.".account WHERE username=?");
-		if( $con !== FALSE) {
-		$stmt->bind_param('s', $username);
-		$stmt->execute();
-		$stmt->bind_result($_CustomRank,$_username,$_email,$_reg_mail,$_joindate,$_last_ip,$_foundus,$_acc_id,$_failed_logins,$_locked,$_last_login,$_online,$_expansion,$_mutetime,$_age,$_avatar,$_mutereason,$_muteby,$_vp,$_dp,$_VipLevel,$_total_votes,$_country);
-		while ($stmt->fetch()) {
-			$this->CustomRank 	= $_CustomRank;   	$this->failed_logins 	= $_failed_logins;    	$this->mutereason 	= $_mutereason;
-			$this->username 	= $_username;     	$this->locked 			= $_locked;          	$this->muteby 		= $_muteby;
-			$this->email 		= $_email;        	$this->last_login 		= $_last_login;       	$this->vp 			= $_vp;
-			$this->reg_mail 	= $_reg_mail;     	$this->online 			= $_online;          	$this->dp 			= $_dp;
-			$this->joindate 	= $_joindate;     	$this->expansion 		= $_expansion;        	$this->VipLevel 	= $_VipLevel;
-			$this->last_ip 		= $_last_ip;      	$this->mutetime 		= $_mutetime;         	$this->total_votes 	= $_total_votes;
-			$this->foundus 		= $_foundus;      	$this->age 				= $_age;     			$this->country 		= $_country;
-			$this->acc_id 		= $_acc_id;			$this->avatar			= $_avatar;
+		$sql = "SELECT CustomRank,username,email,reg_mail,joindate,last_ip,foundus,id,failed_logins,locked,last_login,online,expansion,mutetime,age,avatar,mutereason,muteby,vp,dp,VipLevel,total_votes,country FROM ".$DB_AUTH.".account WHERE username=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('s', $username);
+			$stmt->execute();
+			$stmt->bind_result($_CustomRank,$_username,$_email,$_reg_mail,$_joindate,$_last_ip,$_foundus,$_acc_id,$_failed_logins,$_locked,$_last_login,$_online,$_expansion,$_mutetime,$_age,$_avatar,$_mutereason,$_muteby,$_vp,$_dp,$_VipLevel,$_total_votes,$_country);
+			while ($stmt->fetch()) {
+				$this->CustomRank 	= $_CustomRank;   	$this->failed_logins 	= $_failed_logins;    	$this->mutereason 	= $_mutereason;
+				$this->username 	= $_username;     	$this->locked 			= $_locked;          	$this->muteby 		= $_muteby;
+				$this->email 		= $_email;        	$this->last_login 		= $_last_login;       	$this->vp 			= $_vp;
+				$this->reg_mail 	= $_reg_mail;     	$this->online 			= $_online;          	$this->dp 			= $_dp;
+				$this->joindate 	= $_joindate;     	$this->expansion 		= $_expansion;        	$this->VipLevel 	= $_VipLevel;
+				$this->last_ip 		= $_last_ip;      	$this->mutetime 		= $_mutetime;         	$this->total_votes 	= $_total_votes;
+				$this->foundus 		= $_foundus;      	$this->age 				= $_age;     			$this->country 		= $_country;
+				$this->acc_id 		= $_acc_id;			$this->avatar			= $_avatar;
+			}
+			$stmt->close();
 		}
-		$stmt->close();
 		$con->close();
 	}
 }
@@ -88,15 +99,17 @@ class account {
 	function get_real_rank($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$stmt = $con->prepare("SELECT id,gmlevel FROM ".$DB_AUTH.".account_access WHERE id=?");
-		$stmt->bind_param('i', $id);
-		$stmt->execute();
-		$stmt->bind_result($_id,$_gmlevel);
-		while ($stmt->fetch()) {
-				$this->userid = $_id;
-				$this->gmlevel = $_gmlevel;
+		$sql = "SELECT id,gmlevel FROM ".$DB_AUTH.".account_access WHERE id=?";
+		if ($stmt = $con->prepare($sql)){
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($_id,$_gmlevel);
+			while ($stmt->fetch()) {
+					$this->userid = $_id;
+					$this->gmlevel = $_gmlevel;
+				}
+			$stmt->close();
 		}
-		$stmt->close();
 		$con->close();
 	}
 	function set_avatar($userid,$avatar){
