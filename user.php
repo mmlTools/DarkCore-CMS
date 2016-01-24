@@ -101,7 +101,7 @@
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">ACCOUNT CHARACTERS</div>
 						<?php $i=1; foreach($chars as $count) { ?>
 							<div class='user-character-box'>
-								<div class='portrait' style='text-align:center;'><img src='images/portraits/<?php echo $chars[$i]['class']; ?>.png' width='75' height='75'/></div>
+								<div class='portrait' style='text-align:center;'><img src='images/portraits/race/<?php echo $chars[$i]['class']; ?>.png' width='75' height='75'/></div>
 								<div style='margin-top:0px;'>
 									<div class='char-info-level'><span class='text'><?php echo $chars[$i]['level'];?></span></div>
 									<div class='char-info-race'><img src='images/char/race/<?php echo $chars[$i]['race'];?>-<?php echo $chars[$i]['gender'];?>.gif' /></div>
