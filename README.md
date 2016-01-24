@@ -1,6 +1,6 @@
 # DarkCore-CMS
 This is a Trinitycore Website CMS under development<br>
-Author: Darksoke<br>
+Author: <a href="https://github.com/darksoke">Darksoke</a><br>
 Contributors: <a href="https://github.com/demonreborn">Demonreborn<a><br>
 Web: http://mmltools.com<br>
 
