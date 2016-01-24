@@ -6,9 +6,8 @@ Web: http://mmltools.com<br>
 
 If you want this project to continue and add daily improovements you can help us by donating , all money will be split between contributors.
 
-<script async src="paypal-button.min.js?merchant=CMPYTHLHBQHCE"
-    data-button="donate"
-    data-type="form"
+<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=CMPYTHLHBQHCE" 
+    data-button="donate" 
     data-name="Mmltools DarKcorE CMS"
 ></script>
 
