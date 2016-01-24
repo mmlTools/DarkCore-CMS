@@ -4,15 +4,6 @@ Author: <a href="https://github.com/darksoke">Darksoke</a><br>
 Contributors: <a href="https://github.com/demonreborn">Demonreborn<a><br>
 Web: http://mmltools.com<br>
 
-If you want this project to continue and add daily improovements you can help us by donating , all money will be split between contributors.
-
-<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=CMPYTHLHBQHCE" 
-    data-button="donate" 
-    data-name="Mmltools DarKcorE CMS"
-></script>
-
-
-
 This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS<br><br>
 
 #Note To Developers
