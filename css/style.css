@@ -1224,17 +1224,27 @@ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
 }
 
 #rules-body{
-display: inline-block;vertical-align:top;
-padding: 15px;
-width: 940px;
-border: 1px solid #383838;
-background: #101010;
-margin-top: 4px;
-color: #b0b0b0;
-font-size: 14px;
-box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
+    margin: auto;
+    padding: 15px;
+    width: 940px;
+    border: 1px solid #272626;
+    background: #171616;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    color: #b0b0b0;
+    border-radius: 5px;
 }
-
+#rules-body .title{
+    margin: auto;
+    margin-bottom: 35px;
+    margin-top: 10px;
+    color: #7CBD5D;
+    min-height: 32px;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px 10px black;
+}
 .votean-body {
     text-align: left;
     color: #00CC66;
