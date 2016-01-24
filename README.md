@@ -3,6 +3,14 @@ This is a Trinitycore Website CMS under development<br>
 Author: <a href="https://github.com/darksoke">Darksoke</a><br>
 Contributors: <a href="https://github.com/demonreborn">Demonreborn<a><br>
 Web: http://mmltools.com<br>
+If you want this project to continue and add daily improovements you can help us by donating , all money will be split between contributors.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="CMPYTHLHBQHCE">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 
 This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS<br><br>
 
