@@ -6,12 +6,7 @@
 	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
 </head>
 <body>
-<?php if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];
-	$user_account = new account;
-	$user_account->construct(ucfirst($user_prw));
-	}?>
-	<div id='header'>
-	</div>
+<div id='header'></div>
 	<?php include 'menu.php';?>
 	<div id='content'>
 		<div id='content-wrapper'>
