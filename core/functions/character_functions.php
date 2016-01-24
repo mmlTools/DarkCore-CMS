@@ -66,7 +66,6 @@ function entryByGUID($guid){
 			return $entry;
 		}
 	}
-	return 0;
 	$stmt->close();
 	$con->close();
 }
@@ -153,7 +152,7 @@ class character{
 	function get_char_equipment($guid){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_CHARACTERS;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-	$sql = "select slot,item from ".$DB_CHARACTERS.".character_inventory where guid=? and bag = 0 and slot in( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18);";
+	$sql = "select slot,item from ".$DB_CHARACTERS.".character_inventory where guid=? and bag = 0 and slot in( 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18)";
 		if ($stmt = $con->prepare($sql)) {
 			$stmt->bind_param("i", $guid);
 			$stmt->execute();

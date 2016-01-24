@@ -134,8 +134,6 @@ function get_item_data($i_entry)
 					'stat_type1' => $_stat_type1,
 					'stat_value1' => $_stat_value1,
 					'entry' => $_entry,
-					'stat_type1' => $_stat_type1,
-					'stat_value1' => $_stat_value1,
 					'quality' => $_Quality,
 					'stat_type2' => $_stat_type2,
 					'stat_value2' => $_stat_value2,
