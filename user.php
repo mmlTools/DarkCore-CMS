@@ -32,6 +32,16 @@
 			<?php $account = new account;$account->construct($user_prw); $chars = chars_by_userID($account->acc_id);?>
 			<div id='user-box'>
 				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">BASIC ACCOUNT INFORMATIONS</div>
+				<div id="userbox-center">
+					<a class="userbox-button" href="">DONATE</a>
+					<?php if ($user_account->gmlevel < 5) { ?>
+						<a id="gmapply" class="userbox-button" href="#">APPLY FOR GM SPOT</a>
+					<?php } else { ?>
+						<a id="gm-tools" class="userbox-button" href="#">GAMEMASTER TOOLS</a>
+					<?php } ?>
+					<a id="avatarscript" class="userbox-button" href="#">CHANGE AVATAR</a>
+					<a id="charlist" class="userbox-button" href="#">LIST CHARACTERS</a>
+				</div>
 				<div id="userbox-left">
 					<div class="user-box-avatar">
 						<img src='<?php echo $account->avatar;?>' alt='avatar' width="122" height="130"/>
@@ -74,16 +84,6 @@
 							<div class="userbox-line-light">-----</div>
 						</div>
 					</div>
-				</div>
-				<div id="userbox-right">
-					<a class="userbox-button" href="">DONATE</a>
-					<?php if ($user_account->gmlevel < 5) { ?>
-						<a id="gmapply" class="userbox-button" href="#">APPLY FOR GM SPOT</a>
-					<?php } else { ?>
-						<a id="gm-tools" class="userbox-button" href="#">GAMEMASTER TOOLS</a>
-					<?php } ?>
-					<a id="avatarscript" class="userbox-button" href="#">CHANGE AVATAR</a>
-					<a id="charlist" class="userbox-button" href="#">LIST CHARACTERS</a>
 				</div>
 				<div id="userbox-big">
 					<div id="avatar-scripts" style="display: none;text-align:center;">
