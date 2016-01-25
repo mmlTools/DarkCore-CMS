@@ -94,7 +94,6 @@ class account {
 		}
 		$con->close();
 	}
-}
 	
 	function get_real_rank($id){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
