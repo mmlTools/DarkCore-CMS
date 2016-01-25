@@ -1747,7 +1747,7 @@ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
     width: 650px;
     display: inline-block;
     vertical-align: top;
-    background: #181818;
+    background: #282828;
     color: #6CA29B;
     padding: 10px;
     margin-left: 10px;
@@ -1768,6 +1768,17 @@ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
     display: inline-block;
     vertical-align: top;
     background: #181818;
+    color: #6CA29B;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #383838;
+    text-align: center;
+}
+#userbox-center{
+    width: 900px;
+    display: inline-block;
+    vertical-align: top;
+    background: #282828;
     color: #6CA29B;
     padding: 10px;
     margin-left: 10px;
