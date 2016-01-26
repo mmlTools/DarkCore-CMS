@@ -1,34 +1,6 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php'; if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];}
-require_once 'core/config.php';
-require_once 'core/functions/global_functions.php';
-require_once 'core/functions/realm_functions.php';
-require_once 'core/functions/bugtracker.php';
-require_once 'core/functions/account_functions.php';
-require_once 'core/functions/vote_functions.php';
-require_once 'core/functions/board_functions.php';
-$user_account = new account;
-?>
-	<title>GamingZeta - THW</title>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-</head>
-<body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<div id='header'>
-
-	</div>
-	<?php include 'menu.php';
-        if (isset($_GET["errlogin"])){
-    ?>
-    <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
+<?php define('DarkCoreCMS', TRUE); include 'header.php'; if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];} ?>
+    <?php if (isset($_GET["errlogin"])){?>
+        <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
 	<div id='content'>
 		<div id='index-content-left'>

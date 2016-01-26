@@ -1,16 +1,9 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php' ?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
-</head>
-<body>
-<?php if (!isset($_SESSION['usr'])) { ?>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';
-	        include 'core/functions/global_functions.php';
+<?php define('DarkCoreCMS', TRUE); include 'header.php';
+if (!isset($_SESSION['usr'])) {
 	 if (isset($_GET["regerror"])){
          get_reg_errors($_GET['regerror']);
-    } ?>
-	</div>
+}
+?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='user-box'>
@@ -50,7 +43,7 @@
 	</div>
 </body>
 <?php include 'global-footer.php' ?>
-<?php } else { 
-header('Location: user.php');
-} ?>
+<?php } else
+	echo "<script> window.location.href = 'user';</script>"
+?>
 </html>

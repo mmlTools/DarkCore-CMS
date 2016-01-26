@@ -1,19 +1,9 @@
 <?php define('DarkCoreCMS', TRUE);
-require_once 'core/config.php'; 
-		require_once 'core/functions/global_functions.php'; 
-			require_once 'core/functions/armory_functions.php'; 
-				require_once 'core/functions/character_functions.php';
-					if (isset($_GET['c'])){$character = $_GET['c'];} if(character_exist($character)){ 
-	include 'header.php'?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?> / <?php echo $_GET['c']; ?></title>
-</head>
-<body>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';
-		$charinfo = new character;
-		$charinfo->construct($character);
-		$charinfo->get_char_equipment($charinfo->charguid);?>
+	include 'header.php';
+	if (isset($_GET['c'])){$character = $_GET['c'];} if(character_exist($character)){
+	$charinfo->construct($character);
+	$charinfo->get_char_equipment($charinfo->charguid);
+?>
 	<div id='content'>
 		<div id='character-left'>
 			<div class='left-character-panel'>
@@ -305,5 +295,5 @@ require_once 'core/config.php';
 <?php
 }
 else 
-	header('Location: armory.php');
+	echo "<script> window.location.href = 'armory';</script>"
 ?>

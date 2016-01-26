@@ -412,7 +412,13 @@ function get_rules($type){
 	return $rules;
 	$con->close();
 }
-
+function logout($session)
+{
+	session_unset($session);
+	session_destroy();
+	echo "<script> window.location.href = 'index'; </script>";
+	exit();
+}
 function comm_paging($newsid,$total_results,$limit_per_page,$cur_page = 1){
 	
 	// How many adjacent pages should be shown on each side?

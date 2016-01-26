@@ -1,19 +1,7 @@
 <?php define('DarkCoreCMS', TRUE); include 'header.php' ;
-			require_once 'core/config.php'; 
-				require_once 'core/functions/global_functions.php'; 
-					require_once 'core/functions/realm_functions.php'; 
-						require_once 'core/functions/account_functions.php'; 
-							require_once 'core/functions/armory_functions.php'; ?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
-</head>
-<body>
-<?php if (isset($_SESSION['usr'])) { $user_prv = $_SESSION['usr'];
-	$user_account = new account;
+if (isset($_SESSION['usr'])) { $user_prv = $_SESSION['usr'];
 	$user_account->construct(ucfirst($user_prv));
 	}?>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';?>
 	<div id='content'>
 		<div id='content-wrapper'>
 		<div id='crt-content'>All results are updated in real time</div>

@@ -1,23 +1,10 @@
 <?php define('DarkCoreCMS', TRUE);
-require_once 'core/config.php'; 
-		require_once 'core/functions/global_functions.php'; 
-			require_once 'core/functions/armory_functions.php'; 
-				require_once 'core/functions/character_functions.php';
-					require_once 'core/functions/realm_functions.php';
-					if (isset($_GET['realm'])){ 
-	include 'header.php'?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?> </title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
-<body>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';
+	if (isset($_GET['realm'])){
+		include 'header.php';
 		$realmid = $_GET['realm'];
 		$realminfo = new realm;
 		$realminfo->get_all($realmid);
-		?>
-		
+?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='realm-frame'>
@@ -197,5 +184,5 @@ $(document).ready(function(){
 <?php
 }
 else 
-	header('Location: index.php');
+	echo "<script> window.location.href = 'index';</script>"
 ?>

@@ -1,30 +1,17 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php' ?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
-<body>
-<?php if (isset($_SESSION['usr'])) { ?>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';
-	include 'core/config.php';
-	include 'core/functions/global_functions.php';
-	include 'core/functions/realm_functions.php';
-	include 'core/functions/account_functions.php';
-	include 'core/functions/character_functions.php';
-	include 'core/functions/vote_functions.php';
+<?php define('DarkCoreCMS', TRUE); include 'header.php';
+if (isset($_SESSION['usr'])) {
 	$user_account = new account;
 	$user_prw = $_SESSION['usr'];
 	$user_account->construct(ucfirst($user_prw));
 	if (isset($_POST['select-avatar'])){
 		$user_account->set_avatar($user_account->acc_id,$_POST['select-avatar']);
-		header("Location: user");
+		echo "<script> window.location.href = 'user';</script>";
 	}
 	if (isset($_POST['send-apply'])){
 		$user_account->send_application($user_account->acc_id,$user_account->username,$_POST['answ-1'],$_POST['answ-2'],$_POST['answ-3'],$_POST['answ-4'],$_POST['answ-5'],$_POST['answ-6'],$_POST['answ-7'],$_POST['answ-8']);
-		header("Location: user");
+		echo "<script> window.location.href = 'user';</script>";
 	}
-	?>
+?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div class='lastnews-head-text'><?php echo ucwords($user_prw) ?>'s User Administration Panel</div>

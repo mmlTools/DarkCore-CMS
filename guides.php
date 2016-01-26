@@ -2,21 +2,7 @@
 GUIDES PAGE: Progress 25%
 MAIN AUTHOR: Darksoke
 -->
-<?php define('DarkCoreCMS', TRUE); include 'header.php' ;
-			require_once 'core/config.php'; 
-				require_once 'core/functions/global_functions.php'; 
-					require_once 'core/functions/realm_functions.php'; 
-						require_once 'core/functions/account_functions.php'; ?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-</head>
-<body>
-	<div id='header'>
-	</div>
-	<?php include 'menu.php';
-	 $text_parser = new BbParser;
-	?>
+<?php define('DarkCoreCMS', TRUE); include 'header.php' ; ?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='guides-body'>

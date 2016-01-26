@@ -1,24 +1,13 @@
 <?php define('DarkCoreCMS', TRUE);
-include 'header.php';
-include '../core/config.php';
-include '../core/functions/global_functions.php';
-include '../core/functions/realm_functions.php';
-include '../core/functions/bugtracker.php';
-include '../core/functions/account_functions.php';
-include '../core/functions/vote_functions.php';
-include '../core/functions/armory_functions.php';
-require_once "../core/functions/board_functions.php";
+foreach (glob("../core/functions/*.php") as $filename)
+{
+    include $filename;
+}
+include '../header.php';
 if (isset($_SESSION['usr'])) {
     $user_prw = $_SESSION['usr'];
-    $user_account = new account;
     $user_account->construct(ucfirst($user_prw));}
-	?>
-    <title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?> </title>
-</head>
-<body>
-	<div id='header'>
-	</div>
-    <?php include 'menu.php';?>
+	?>]
     <div id="notify">Forum is not coded yet until beta release</div>
 	<div id='content'>
         <div id="forum-left">

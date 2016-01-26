@@ -1,12 +1,16 @@
 <?php if(!defined('DarkCoreCMS')) { header('Location: ../');} 
+//Website informations
+$website_title = "DarkCorE CMS";
+$website_description = "This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS";
+$website_keywords = "Dark,core,darkcore,cms,trinitycore";
 
-//$GLOBALS['DB_HOST'] = '0';
-//$GLOBALS['DB_USERNAME'] = '0';
-//$GLOBALS['DB_PASSWORD'] = '0';
-$GLOBALS['DB_WEBSITE'] = 'mysite';
-$GLOBALS['DB_WORLD'] = 'world';
-$GLOBALS['DB_AUTH'] = 'auth';
-$GLOBALS['DB_CHARACTERS'] = 'characters';
+//$DB_HOST = '0';
+//$DB_USERNAME = '0';
+//$DB_PASSWORD = '0';
+$DB_WEBSITE = 'mysite';
+$DB_WORLD = 'world';
+$DB_AUTH = 'auth';
+$DB_CHARACTERS = 'characters';
 
 //Was doing some tests to change the headers of some functions Add here your database login informations instead
 function connect($shag,$sgsg,$gsg){
