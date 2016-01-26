@@ -415,7 +415,6 @@ function get_rules($type){
 function logout($session)
 {
 	session_unset($session);
-	session_destroy();
 	echo "<script> window.location.href = 'index'; </script>";
 	exit();
 }
