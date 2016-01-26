@@ -68,16 +68,54 @@ function check_email_exist($email){
 	$stmt->close();
 	$con->close();
 }
-function register_user($username,$password,$email,$country,$age,$foundus){
-	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
-	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-	$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email, country, age, foundus) VALUES (?,?,?,?,?,?)";
-	if ($stmt = $con->prepare($sql)) {
-		$stmt->bind_param("ssssss", $username, $password, $email, $country, $age, $foundus);
-		$stmt->execute();
-		$stmt->close();
+
+function register_user($username,$password,$re_password,$email,$re_email,$country,$age,$foundus,$robot1,$total = 0,$robot2,$checktext = NULL){
+	$_error= '';
+	if (check_user_exist($Username) > 0)
+		$_error = $_error . 'A';
+	if (strlen($username)  < 3)
+		$_error = $_error . 'B';
+	if (strlen($password)  < 8)
+		$_error = $_error . 'C';
+	if (check_email_exist($email) > 0)
+		$_error = $_error . 'D';
+	if (strlen($email)  < 10)
+		$_error = $_error . 'E';
+	if (strlen($country)  < 2)
+		$_error = $_error . 'F';
+	if (strlen($age)  < 2)
+		$_error = $_error . 'G';
+	if (strlen($foundus)  < 5)
+		$_error = $_error . 'H';
+	if (strlen($robot1)  < 1)
+		$_error = $_error . 'I';
+	if (strlen($robot2) < 1)
+		$_error = $_error . 'J';
+	if ($password != $re_password)
+		$_error = $_error . 'K';
+	if ($email != $re_email)
+		$_error = $_error . 'L';
+	if ($robot1 != $total)
+		$_error = $_error . 'M';
+	if (strtoupper($robot2) != $checktext)
+		$_error = $_error . 'N';
+	if (strlen($_error) > 0)
+		echo "<script> window.location.href = 'register?regerror=1&errtype=$_error';</script>";
+	else {
+		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
+		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+		$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email, country, age, foundus) VALUES (?,?,?,?,?,?)";
+		if ($stmt = $con->prepare($sql)) {
+			$stmt->bind_param("ssssss", $username, $password, $email, $country, $age, $foundus);
+			$stmt->execute();
+			$stmt->close();
+		}
+		$con->close();
+		//echo "<script> window.location.href = 'inc/success?page=register&user=$username';</script>";
+		header('Location: register?success');
 	}
-	$con->close();
+
+
 }
 function login($USR,$PSW){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;

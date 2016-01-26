@@ -1,16 +1,27 @@
 <?php define('DarkCoreCMS', TRUE); include 'header.php';
 if (!isset($_SESSION['usr'])) {
 	 if (isset($_GET["regerror"])){
-         get_reg_errors($_GET['regerror']);
+         get_reg_errors($_GET['errtype']);
 }
 ?>
+<?php
+$first=rand(1,10);
+$second=rand(1,10);
+$third=rand(1,10);
+$sum_s=$first+$second+$third;
+if (isset($_POST['regsubmit']))
+	register_user($_POST['Username'], $_POST['Password'], $_POST['RepeatPassword'], $_POST['Email'], $_POST['RepeatEmail'], $_POST['Country'], $_POST['Age'], $_POST['foundus'], $_POST['robot1'], $_POST['robot1-root'], $_POST['robot2'], $_POST['robot2-root']);
+if (isset($_GET['success'])){
+?>
+	<div id="success">You have succesfully created a new account click <a href="index">HERE</a> and log in</div>
+<?php } ?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='user-box'>
 				<div class='reg-alts-part'>
 					<h3 class='user-box-title'>Register new account</h3>
 					<span class='box-divider'></span>
-					<form action="core/do_register.php" method="post" enctype="multipart/form-data">
+					<form action="" method="post" enctype="multipart/form-data">
 						<input class='reg-input' type='text' 		value='' name='Username'		autocomplete='off' placeholder='Username**' required>
 						<input class='reg-input' type='password' 	value='' name='Password'		autocomplete='off' placeholder='Password**'  required>
 						<input class='reg-input' type='password' 	value='' name='RepeatPassword'	autocomplete='off' placeholder='Repeat Password**'  required>
@@ -19,7 +30,7 @@ if (!isset($_SESSION['usr'])) {
 						<input class='reg-input' type='text' 		value='' name='Country'			autocomplete='off' placeholder='Country**'  required>
 						<input class='reg-input' type='text' 		value='' name='Age'				autocomplete='off' placeholder='Age**'  required>
 						<input class='reg-input' type='text' 		value='' name='foundus'			autocomplete='off' placeholder='How did you find us?**'  required>
-						<?php $first=rand(1,10);$second=rand(1,10);$third=rand(1,10); $sum_s=$first+$second+$third;
+						<?php
 						echo "
 						<input class='reg-input-small' type='text' 	value='' name='robot1' 			autocomplete='off' placeholder='Write the Answer**'  required> <span class='reg-input-question'>".$first."+".$second."+".$third."=?</span>
 						<input type='hidden' 	value='".$sum_s."' name='robot1-root'>

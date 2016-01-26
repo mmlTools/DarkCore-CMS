@@ -648,6 +648,18 @@ margin-bottom:2px;
     padding: 5px;
     margin-bottom:5px;
 }
+#success {
+    width: 790px;
+    height: 20px;
+    margin: auto;
+    box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000;
+    border-radius: 4px;
+    background: #006600;
+    text-align: center;
+    color: #0f9996;
+    padding: 5px;
+    margin-bottom:5px;
+}
 .pvp-ladder-box{
 width: 95%;
 height: 17px;
