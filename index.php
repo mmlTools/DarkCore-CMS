@@ -124,7 +124,7 @@
             </div>
             <div class="connectionguide"></div>
             <div class="dpatches"></div>
-            <div class="rmlist">set realmlist wotlk.gamingzeta.com</div>
+            <div class="rmlist">set realmlist <?php echo $realmlist ?></div>
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">

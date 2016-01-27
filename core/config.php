@@ -4,6 +4,12 @@ $website_title = "DarkCorE CMS";
 $website_description = "This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS";
 $website_keywords = "Dark,core,darkcore,cms,trinitycore";
 
+//Armory Config
+$limit=21; //Set how many results to show / page
+
+//Server Config
+$realmlist="wotlk.gamingzeta.com";
+
 //$DB_HOST = '0';
 //$DB_USERNAME = '0';
 //$DB_PASSWORD = '0';

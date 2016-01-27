@@ -1,6 +1,17 @@
-html{
-font-family: 'Calibri', 'newCalibri', 'Arial';
+@font-face {
+    font-family: "FuturaEF-Book";
+    src: url('fonts/FuturaEF-Book.eot');
+    src: url('fonts/FuturaEF-Book.otf') format('otf'),
+    url('fonts/FuturaEF-Book.woff') format('woff'),
+    url('fonts/FuturaEF-Book.ttf') format('truetype');
 }
+html{
+    font-family: "FuturaEF-Book";
+}
+::-webkit-input-placeholder 		{font-family: "FuturaEF-Book";}
+:-moz-placeholder 					{font-family: "FuturaEF-Book";}
+::-moz-placeholder 				{font-family: "FuturaEF-Book";}
+:-ms-input-placeholder 			{font-family: "FuturaEF-Book";}
 body{
 background: #090909 url(../images/bg.jpg) no-repeat;
 background-position: top;
@@ -90,17 +101,16 @@ border: none;
     font-weight: 900;
     font-size: 14px;
     color: #7CBD68;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    transition: all 0.2s linear;
     display: inline-block;
     vertical-align: top;
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 10px;
     padding-right: 10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .menu-item-box{
 float:left;
@@ -353,7 +363,13 @@ display: inline-block;
 }
 .main-tools-li a:link 		{color:#3EA237;  text-shadow:0px 3px 8px black;}
 .main-tools-li a:visited 	{color:#3EA237;  text-shadow:0px 3px 8px black;}
-.main-tools-li a:hover 		{color:#A7D6A3;  text-shadow:0px 3px 8px black;}
+.main-tools-li a:hover 		{
+    color:#A7D6A3;
+    text-shadow:0px 3px 8px black;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;}
 .main-tools-li a:active 	{color:#3EA237;  text-shadow:0px 3px 8px black;}
 
  #lastbugreports{
@@ -386,7 +402,7 @@ margin-top: 15px;
 .box-divider{
 width: 100%;
 height: 1px;
-background: #585858;
+background: #383838;
 float:left;
 margin-bottom: 15px;
 display: inline-block;
@@ -660,6 +676,7 @@ margin-bottom:2px;
     padding: 5px;
     margin-bottom:5px;
 }
+
 .pvp-ladder-box{
 width: 95%;
 height: 17px;
@@ -1135,7 +1152,7 @@ margin-bottom: 3px;
 padding-top:5px;
 padding-left: 15px;
 color: #fff;
-box-shadow: 0px 3px 8px #000; 
+box-shadow: 0px 3px 8px #000;
 }
 .logged-menu:hover{
  box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
