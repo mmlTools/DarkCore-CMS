@@ -46,10 +46,13 @@ if (isset($_GET['Logout']) && isset($_SESSION['usr'])){
 			<a class='menu-item' href='forum'>FORUM <label style="font-size:10px;color:lime;">alpha</label></a>
 			<a class='menu-item' href='rules'>RULES</a>
 			<?php if (isset($_SESSION['usr'])){
+				echo "<a class='menu-item' href='store'>STORE <label style='font-size:10px;color:lime;'>alpha</label></a>";
 				echo "<a class='menu-item' href='user'>ACCOUNT PANEL</a>";
 				echo "<a class='menu-item' href='?Logout'>LOGOUT</a>";
-			} else
-				echo "<a class='menu-item' href='register'>REGISTER</a>"; ?>
+			} else{
+				echo "<a class='menu-item' href='login'>LOGIN</a>"; 
+				echo "<a class='menu-item' href='register'>REGISTER</a>"; 
+			}?>
 		</div>
 	</center>
 </div>
