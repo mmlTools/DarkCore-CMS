@@ -1,14 +1,14 @@
 <?php if(!defined('DarkCoreCMS')) { header('Location: ../');} 
 //Website informations
 $website_title = "DarkCorE CMS";
-$website_description = "This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS";
+$website_description = "DarKcorE CMS is an Open Source work in progress Content Management System for Trinitycore released for free for our lovely emulation communities.";
 $website_keywords = "Dark,core,darkcore,cms,trinitycore";
 
 //Armory Config
 $limit=21; //Set how many results to show / page
 
 //Server Config
-$realmlist="wotlk.gamingzeta.com";
+$realmlist="cms.darkcore.com";
 
 //$DB_HOST = '0';
 //$DB_USERNAME = '0';

@@ -29,12 +29,12 @@ if (isset($_SESSION['usr'])) {
                                     <div class="f-desc"><?php echo $forums->forums[$j]['description'] ?></div>
                                 </div>
                                 <div class="f-info-topics">
-                                    <div style="font-weight:bold;padding-top:10px;"><?php echo $topic->total_topics; ?></div>
-                                    <div style="color:#ffffff">TOPICS</div>
+                                    <div class="f-main-totals"><?php echo $topic->total_topics; ?></div>
+                                    <div class="f-main-totals">TOPICS</div>
                                 </div>
                                 <div class="f-info-posts">
-                                    <div style="font-weight:bold;padding-top:10px;"><?php echo $topic->total_posts; ?></div>
-                                    <div style="color:#ffffff">POSTS</div>
+                                    <div class="f-main-totals"><?php echo $topic->total_posts; ?></div>
+                                    <div class="f-main-totals">POSTS</div>
                                 </div>
                             </a>
                             <?php $lasttopic = $topic->get_last_topic($forums->forums[$j]['id']); { ?>

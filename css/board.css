@@ -377,7 +377,12 @@
     vertical-align: top;
     color: #6AA29A;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 10px;
+}
+.f-main-totals{
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 12px;
 }
 .brokenhover-down{width:2px;height:55px;background:url("../images/broken-hover-down.png");display: inline-block;  vertical-align: top;margin-top:-15px;}
 #forum-right{

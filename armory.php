@@ -74,7 +74,7 @@ if (isset($_GET['crit']))
 					if ($totals->total_characters == 0)
 						echo "<span class='arm-title'><div class='armerror'>No results matches your criteria</div></span>";
 					else {?>
-						<span class='arm-title'>Found <?php echo $totals->total_characters ?> results matching your criteria  - Showing <?php if ($totals->total_characters < $limit) echo $totals->total_characters; else echo $limit;?> Items / Page</span>
+						<span class='arm-title'>Found <?php echo $totals->total_characters ?> results matching your criteria  - Showing <?php if ($totals->total_characters < $limit) echo $totals->total_characters; else echo $limit;?> Characters / Page</span>
 						<div id='list-bg'>
 							<div class='list-line-desc' style="padding-bottom: 20px;">
 								<div class='portrait-ascds' style='width:42px;display:inline-block;'></div>

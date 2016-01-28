@@ -6,8 +6,8 @@
 		<div id='index-content-left'>
 			<div id='main-tools'>
 				<div class='main-tools-box'>
-                    <h1 class="main-tools-head-text">WELCOME TO GAMINGZETA</h1>
-                    <div class="main-tools-description">Gaming zeta is a fairly new server 1 year and few months old , so far we offer a max level 255 realm wich is stil under development , here are some useful links for you</div>
+                    <h1 class="main-tools-head-text">WELCOME TO <?php echo strtoupper($website_title) ?></h1>
+                    <div class="main-tools-description"><?php echo $website_description ?></div>
                     <ul>
                         <li class="main-tools-li"><a href="armory">ARMORY</a></li>
                         <li class="main-tools-li"><a href="guides">GUIDES & DOWNLOADS</a></li>
