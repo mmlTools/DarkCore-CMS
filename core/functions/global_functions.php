@@ -25,6 +25,21 @@ function encrypt($username, $password)
     $password = strtoupper($password);
       return $password;
 }
+function do_login($username, $password){
+	if (strlen($username) >= 3 && strlen($password) >= 3){
+		$passwd = encrypt($username, $password);
+		$check_result = login($username,$passwd);
+		if ($check_result == 'yes'){
+			$_SESSION['usr'] = $username;
+			echo "<script>window.location.href = 'user'</script>";
+		}
+		else{
+			echo "<script>window.location.href = 'index?errlogin=1'</script>";
+		}
+	}
+	else
+		echo "<script>window.location.href = ''</script>";
+}
 function get_reg_errors($type){
 	$errors = str_split ($type);
 	for ($i=0;$i<count($errors);$i++){
@@ -71,7 +86,7 @@ function check_email_exist($email){
 
 function register_user($username,$password,$re_password,$email,$re_email,$country,$age,$foundus,$robot1,$total = 0,$robot2,$checktext = NULL){
 	$_error= '';
-	if (check_user_exist($Username) > 0)
+	if (check_user_exist($username) > 0)
 		$_error = $_error . 'A';
 	if (strlen($username)  < 3)
 		$_error = $_error . 'B';

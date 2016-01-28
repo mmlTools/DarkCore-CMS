@@ -1,5 +1,7 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php'; if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];} ?>
-    <?php if (isset($_GET["errlogin"])){?>
+<?php define('DarkCoreCMS', TRUE); include 'header.php'; if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];}
+    if (isset($_POST['login']))
+        do_login($_POST['login_username'],$_POST['login_password']);
+    if (isset($_GET["errlogin"])){?>
         <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
 	<div id='content'>
@@ -85,7 +87,7 @@
                 <div class="newsdivider"></div>
                 <div class='loggedas'>
                 <?php if (!isset($_SESSION['usr'])) {?>
-					<form action='core/do_login.php' method='post'  autocomplete='off' enctype='multipart/form-data'>
+					<form action='' method='post'  autocomplete='off' enctype='multipart/form-data'>
                         <input style="display:none">
                         <input type="password" style="display:none">
                         <input value=''  name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />

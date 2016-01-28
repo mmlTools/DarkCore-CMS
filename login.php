@@ -1,12 +1,14 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php' ?>
-<?php if (!isset($_SESSION['usr'])) { ?>
+<?php define('DarkCoreCMS', TRUE); include 'header.php';
+if (isset($_POST['login']))
+	do_login($_POST['login_username'],$_POST['login_password']);
+if (!isset($_SESSION['usr'])) { ?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='user-box'>
 				<div class='reg-alts-part'>
 					<h3 class='user-box-title'>Login to your Account</h3>
 					<span class='box-divider'></span>
-					<form action='core/do_login.php' method='post' autocomplete='off' enctype='multipart/form-data'>
+					<form action='' method='post' autocomplete='off' enctype='multipart/form-data'>
                         <input style="display:none">
                         <input type="password" style="display:none">
                         <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
