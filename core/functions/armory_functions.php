@@ -90,7 +90,7 @@ function get_basic_item($criteria,$cur_page,$limit){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WORLD;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$from = ($cur_page-1) * $limit;
-	$crit = '%'.ucfirst($criteria).'%';
+	$crit = '%'.ucfirst($con->escape_string($criteria)).'%';
 	$sql = "SELECT entry,displayid,quality,name,class,subclass,inventorytype,itemlevel,requiredlevel FROM ".$DB_WORLD.".item_template where name like ? order by entry ASC limit ?,?";
 	$i=1;
 	if ($stmt = $con->prepare($sql)) {
@@ -649,17 +649,18 @@ function get_changelogs(){
 
 class get_totals {
 	public $total_items;
-	public $total_charactes;
+	public $total_characters;
 	public $total_quests;
 	public $total_guilds;
 	
 	function get_total_characters($criteria){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_CHARACTERS;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-		$sql = "SELECT * FROM ".$DB_CHARACTERS.".characters WHERE `name` like ? or name like ?";
-		$crit='%'.ucfirst($criteria).'%';
+		$sql = "SELECT * FROM ".$DB_CHARACTERS.".`characters` WHERE `name` like ? or name like ?";
+		$crit='%'.ucfirst($con->escape_string($criteria)).'%';
+		$crit_norm='%'.$con->escape_string($criteria).'%';
 		if ($stmt = $con->prepare($sql)) {
-			$stmt->bind_param("ss", $crit, $criteria);
+			$stmt->bind_param("ss", $crit, $crit_norm);
 			$stmt->execute();
 			$stmt->store_result();
 			$this->total_characters = $stmt->num_rows();
@@ -667,6 +668,7 @@ class get_totals {
 			$con->close();
 		}
 	}
+
 	function get_total_guilds($criteria){
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_CHARACTERS;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
@@ -685,7 +687,7 @@ class get_totals {
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WORLD;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 		$sql = "SELECT * FROM ".$DB_WORLD.".item_template WHERE `name` like ? order by entry ASC";
-		$crit='%'.ucfirst($criteria).'%';
+		$crit='%'.ucfirst($con->escape_string($criteria)).'%';
 		if ($stmt = $con->prepare($sql)) {
 			$stmt->bind_param("s",$crit);
 			$stmt->execute();
@@ -709,11 +711,28 @@ class get_totals {
 			$con->close();
 		}
 	}
-	function construct($criteria){
-		$this->get_total_characters($criteria);
-		$this->get_total_guilds($criteria);
-		$this->get_total_items($criteria);
-		$this->get_total_quests($criteria);
+	function construct($criteria, $type = NULL){
+		switch ($type){
+			case NULL:
+				$this->get_total_characters($criteria);
+				$this->get_total_items($criteria);
+				$this->get_total_guilds($criteria);
+				$this->get_total_quests($criteria);
+				break;
+			case "Characters":
+				$this->get_total_characters($criteria);
+				break;
+			case "Items":
+				$this->get_total_items($criteria);
+				break;
+			case "Guilds":
+				$this->get_total_guilds($criteria);
+				break;
+			case "Quests":
+				$this->get_total_quests($criteria);
+				break;
+			case "Arenas":break;
+		}
 	}
 }
 
