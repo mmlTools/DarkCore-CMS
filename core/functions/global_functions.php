@@ -117,13 +117,12 @@ function register_user($username,$_new_password,$re_password,$email,$re_email,$c
 	if (strlen($_error) > 0)
 		echo "<script> window.location.href = 'register?regerror=1&errtype=$_error';</script>";
 	else {
-		$username = $_POST['Username'];
-		$password = encrypt($username, $_new_password);
+		$encr_password = encrypt($username, $_new_password);
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 		$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email, country, age, foundus) VALUES (?,?,?,?,?,?)";
 		if ($stmt = $con->prepare($sql)) {
-			$stmt->bind_param("ssssss", $username, $password, $email, $country, $age, $foundus);
+			$stmt->bind_param("ssssss", $username, $encr_password, $email, $country, $age, $foundus);
 			$stmt->execute();
 			$stmt->close();
 		}
