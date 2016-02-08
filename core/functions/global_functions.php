@@ -84,13 +84,13 @@ function check_email_exist($email){
 	$con->close();
 }
 
-function register_user($username,$password,$re_password,$email,$re_email,$country,$age,$foundus,$robot1,$total = 0,$robot2,$checktext = NULL){
+function register_user($username,$_new_password,$re_password,$email,$re_email,$country,$age,$foundus,$robot1,$total = 0,$robot2,$checktext = NULL){
 	$_error= '';
 	if (check_user_exist($username) > 0)
 		$_error = $_error . 'A';
 	if (strlen($username)  < 3)
 		$_error = $_error . 'B';
-	if (strlen($password)  < 8)
+	if (strlen($_new_password)  < 8)
 		$_error = $_error . 'C';
 	if (check_email_exist($email) > 0)
 		$_error = $_error . 'D';
@@ -106,7 +106,7 @@ function register_user($username,$password,$re_password,$email,$re_email,$countr
 		$_error = $_error . 'I';
 	if (strlen($robot2) < 1)
 		$_error = $_error . 'J';
-	if ($password != $re_password)
+	if ($_new_password != $re_password)
 		$_error = $_error . 'K';
 	if ($email != $re_email)
 		$_error = $_error . 'L';
@@ -117,6 +117,8 @@ function register_user($username,$password,$re_password,$email,$re_email,$countr
 	if (strlen($_error) > 0)
 		echo "<script> window.location.href = 'register?regerror=1&errtype=$_error';</script>";
 	else {
+		$username = $_POST['Username'];
+		$password = encrypt($username, $_new_password);
 		global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 		$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 		$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email, country, age, foundus) VALUES (?,?,?,?,?,?)";
