@@ -97,6 +97,4 @@ if (isset($_SESSION['usr'])) {
         </div>
     </div>
 <script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
+<?php include 'global-footer.php'; ?>

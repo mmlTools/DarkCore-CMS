@@ -1,4 +1,6 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php';
+<?php 
+define('DarkCoreCMS', TRUE); 
+include 'header.php';
 if (isset($_SESSION['usr'])) {
 	$user_account = new account;
 	$user_prw = $_SESSION['usr'];
@@ -16,16 +18,15 @@ if (isset($_SESSION['usr'])) {
 		<div id='content-wrapper'>
 			<div class='lastnews-head-text'><?php echo ucwords($user_prw) ?>'s User Administration Panel</div>
 			<div class="newsdivider"></div>
-			<?php $account = new account;$account->construct($user_prw); $chars = chars_by_userID($account->acc_id);?>
+			<?php $account = new account; $account->construct($user_prw); $chars = chars_by_userID($account->acc_id);?>
 			<div id='user-box'>
 				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">BASIC ACCOUNT INFORMATIONS</div>
 				<div id="userbox-center">
 					<a class="userbox-button" href="">DONATE</a>
-					<?php if ($user_account->gmlevel < 5) { ?>
-						<a id="gmapply" class="userbox-button" href="#">APPLY FOR GM SPOT</a>
-					<?php } else { ?>
-						<a id="gm-tools" class="userbox-button" href="#">GAMEMASTER TOOLS</a>
-					<?php } ?>
+					<?php 
+						if ($user_account->gmlevel < 5) echo "<a id='gmapply' class='userbox-button' href='#'>APPLY FOR GM SPOT</a>";
+						else echo "<a id='gm-tools' class='userbox-button' href='#'>GAMEMASTER TOOLS</a>"; 
+					?>
 					<a id="avatarscript" class="userbox-button" href="#">CHANGE AVATAR</a>
 					<a id="charlist" class="userbox-button" href="#">LIST CHARACTERS</a>
 				</div>
@@ -79,51 +80,72 @@ if (isset($_SESSION['usr'])) {
 							<?php
 							$dirname = "images/avatars/";
 							$images = glob($dirname."*.png");
-							foreach($images as $image) { $imgname = str_replace($dirname,"",$image);?>
-								<input type="submit" name="select-avatar" value="<?php echo $imgname; ?>" class="avatarlist" style="background: url('<?php echo $dirname.$imgname; ?>');"/>
-							<?php } ?>
+							foreach($images as $image) { 
+								$imgname = str_replace($dirname,"",$image);
+								echo "<input type='submit' name='select-avatar' value='".echo $imgname;."' class='avatarlist' style='background: url('".echo $dirname.$imgname; ."');'/> ";
+							} ?>
 						</form>
 					</div>
 					<div id="acc-characters-list" style="display: none;">
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">ACCOUNT CHARACTERS</div>
-						<?php $i=1; foreach($chars as $count) { ?>
-							<div class='user-character-box'>
-								<div class='portrait' style='text-align:center;'><img src='images/portraits/class/<?php echo $chars[$i]['class']; ?>.png' width='75' height='75'/></div>
+						<?php $i=1; foreach($chars as $count) {
+							echo "<div class='user-character-box'>
+								<div class='portrait' style='text-align:center;'><img src='images/portraits/class/". echo $chars[$i]['class']; .".png' width='75' height='75'/></div>
 								<div style='margin-top:0px;'>
-									<div class='char-info-level'><span class='text'><?php echo $chars[$i]['level'];?></span></div>
-									<div class='char-info-race'><img src='images/char/race/<?php echo $chars[$i]['race'];?>-<?php echo $chars[$i]['gender'];?>.gif' /></div>
-									<div class='char-info-class'><img src='images/char/class/<?php echo $chars[$i]['class'];?>.gif' /></div>
+									<div class='char-info-level'><span class='text'>". echo $chars[$i]['level'];."</span></div>
+									<div class='char-info-race'><img src='images/char/race/". echo $chars[$i]['race'];."-". echo $chars[$i]['gender'];.".gif' /></div>
+									<div class='char-info-class'><img src='images/char/class/". echo $chars[$i]['class'];.".gif' /></div>
 								</div>
-								<div class='char-name'><a style='color:#<?php echo char_name_color($chars[$i]['class']); ?>' href='character?c=<?php echo $chars[$i]['name'];?>'><?php echo $chars[$i]['name'];?></a></div>
-								<a class="userbox-link" href="character?c=Darksoke">VIEW CHARACTER EQUIPMENT</a>
-							</div>
-							<?php $i++; } ?>
+								<div class='char-name'><a style='color:#". echo char_name_color($chars[$i]['class']); ."' href='character?c=". echo $chars[$i]['name'];."'>". echo $chars[$i]['name'];."</a></div>
+								<a class='userbox-link' href='character?c=Darksoke'>VIEW CHARACTER EQUIPMENT</a>
+							</div>";
+							$i++;  
+						} ?>
 					</div>
 					<div id="gm-tools-list" style="display: none;">
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:15px;font-size:18px;margin-top:-10px;">Check active tickets</div>
-						<?php if ($user_account->gmlevel > 5) { $active_tickets = list_tickets(); if (!empty($active_tickets)) {$i=1; foreach($active_tickets as $ticket){ ?>
-							<div class="ticket-line">
-								<div class="ticket-message">
-									<?php echo $active_tickets[$i]['message']; ?>
-								</div>
-								<div class="ticket-info">
-									<div class="ticket-list-title">By: <label class="ticket-list-item"><?php echo $active_tickets[$i]['name']; ?></label></div>
-									<div class="ticket-list-title">In: <label class="ticket-list-item"><?php echo date("l-F-Y H:i",$active_tickets[$i]['lastModifiedTime']); ?></label></div>
-									<div class="ticket-list-title">Assignation: <label class="ticket-list-item"><?php if ($active_tickets[$i]['assignedTo'] == 0) echo 'Public Ticket'; else echo get_charname_byguid($active_tickets[$i]['assignedTo']); ?></label></div>
-									<div class="ticket-list-title">Check: <label class="ticket-list-item"><?php if ($active_tickets[$i]['viewed'] == 0) echo 'Not Viewed'; else echo 'Viewed';  ?></label></div>
-								</div>
-							</div>
-						<?php $i++; }}
-						else { ?>
-							<div class="gmalert">There are no active tickets to show</div>
-						<?php } } else { ?>
-							<div class="gmalert">You are not allowed to see this section</div>
-						<?php } ?>
+						<?php 
+						if ($user_account->gmlevel > 5) { 
+							$active_tickets = list_tickets(); 
+							if (!empty($active_tickets)) {
+								$i=1; 
+								foreach($active_tickets as $ticket){ 
+									echo "<div class='ticket-line'>
+									<div class='ticket-message'>
+										". echo $active_tickets[$i]['message']; ."
+									</div>
+									<div class='ticket-info'>
+										<div class='ticket-list-title'>By: <label class='ticket-list-item'>". echo $active_tickets[$i]['name']; ."</label></div>
+										<div class='ticket-list-title'>In: <label class='ticket-list-item'>". echo date('l-F-Y H:i',$active_tickets[$i]['lastModifiedTime']); ."</label></div>
+										<div class='ticket-list-title'>
+											Assignation: <label class='ticket-list-item'>
+												".if ($active_tickets[$i]['assignedTo'] == 0) echo 'Public Ticket'; 
+												else echo get_charname_byguid($active_tickets[$i]['assignedTo']); ."
+											</label>
+										</div>
+										<div class='ticket-list-title'>
+											Check: <label class='ticket-list-item'>
+												". if ($active_tickets[$i]['viewed'] == 0) echo 'Not Viewed'; 
+												else echo 'Viewed';  ."
+											</label>
+										</div>
+									</div>
+								</div>";
+								$i++; 
+								}
+							}else {
+								echo "<div class='gmalert'>There are no active tickets to show</div>";
+							} 
+						} else {
+							echo "<div class='gmalert'>You are not allowed to see this section</div>";
+						} ?>
 					</div>
 					<div id="application-form" style="text-align: center;display: none;">
 						<?php $user_account->get_application($user_account->acc_id); $appform = $user_account->application; ?>
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:15px;font-size:24px;margin-top:-10px;">Gamemaster Application Form</div>
-						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:15px;font-size:16px;margin-top:-25px;color:#FF068E;"><?php if (!isset($appform)) echo '" Your application is Pending approval you may edit your answers "' ?></div>
+						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:15px;font-size:16px;margin-top:-25px;color:#FF068E;">
+							<?php if (!isset($appform)) echo '" Your application is Pending approval you may edit your answers "' ?>
+						</div>
 						<form method="post">
 							<div class="answer-line">
 								<div class="important-question">1.Please write your full name in order for your application to be validated!</div>
@@ -197,20 +219,22 @@ if (isset($_SESSION['usr'])) {
 								$rem = 0;
 							else
 								$rem = time2string($expire - $cur_time);
-							?>
+							echo "
 							<div class='vote-box'>
-								<div class='name-box'><?php echo $vote_sites[$i]['title'] ?></div>
-									<?php if ($rem == 0){ ?>
-										 <a id="vote-button" href="core/do_vote?siteid=<?php echo $vote_sites[$i]['id']; ?>&user=<?php echo $user_account->acc_id; ?>" target='_blank' onclick="location.reload(true)">
-										 	<img src="<?php echo $vote_sites[$i]["logo"] ?>" border="0" alt="private server" width="88" height="51"/>
-										 </a>
-									<?php } else { ?>
-										 <img src="images/votenew.jpg" border="0" alt="private server" width="88" height="51" />
-									<?php } ?>
-								<div class='points-box'>Points: <?php $day_number = idate('w', $cur_time); if ($day_number == 6 || $day_number == 0) echo $vote_sites[$i]['end_week_points']; else echo $vote_sites[$i]['points']; ?></div>
-								<div id="vote-button" onclick="location.reload(true)" class='time-rem'><?php if ($rem == 0) echo 'You can vote now'; else echo $rem ?></div>
-							</div>
-						<?php } ?>
+								<div class='name-box'><?php echo $vote_sites[$i]['title'] ?></div>";
+									if ($rem == 0){
+										echo "
+											<a id='vote-button' href='core/do_vote?siteid=<?php echo $vote_sites[$i]['id']; ?>&user=." echo $user_account->acc_id; ."' target='_blank' onclick='location.reload(true)'>
+										 		<img src='". echo $vote_sites[$i]['logo'] ."' border='0' alt='private server' width='88' height='51'/>
+										 	</a>";
+									} else {
+										echo"
+										 <img src='images/votenew.jpg' border='0' alt='private server' width='88' height='51' />";
+									}
+								echo "<div class='points-box'>Points:". $day_number = idate('w', $cur_time); if ($day_number == 6 || $day_number == 0) echo $vote_sites[$i]['end_week_points']; else echo $vote_sites[$i]['points']; ."</div>
+								<div id='vote-button' onclick='location.reload(true)' class='time-rem'>".if ($rem == 0) echo 'You can vote now'; else echo $rem ."</div>
+							</div>";
+						} ?>
 				</div>
 			</div>
 		</div>
@@ -267,9 +291,8 @@ if (isset($_SESSION['usr'])) {
 			});
 	</script>
 	<script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-<?php } else { 
-header('Location: index');
-} ?>
-</html>
+<?php 
+	include 'global-footer.php';
+} else { 
+	header('Location: index');
+}

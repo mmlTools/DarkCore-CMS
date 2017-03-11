@@ -1,6 +1,7 @@
-<?php if (!isset($_SESSION)) { session_start(); } include "core/config.php";
-foreach (glob("core/functions/*.php") as $filename)
-{
+<?php 
+	if (!isset($_SESSION)) { session_start(); } 
+	include "core/config.php";
+foreach (glob("core/functions/*.php") as $filename){
 	include $filename;
 }
 if (isset($_SESSION['usr'])) {
@@ -19,7 +20,7 @@ if (isset($_GET['Logout']) && isset($_SESSION['usr'])){
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="<?php echo $website_description ?>">
 	<meta name="keywords" content="<?php echo $website_keywords ?>">
-	<title><?php echo $website_title;?> - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
+	<title><?php echo $website_title."-"; echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" title="Default Styles" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/armory.css" title="Default Styles" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/board.css" title="Default Styles" media="screen">

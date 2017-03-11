@@ -122,6 +122,4 @@ if (isset($_GET['crit']))
 	</div>
 </div>
 <script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
+<?php include 'global-footer.php'; ?>

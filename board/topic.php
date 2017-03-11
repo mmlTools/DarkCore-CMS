@@ -28,12 +28,11 @@ if (isset($_GET['id'])){
 <?php include 'menu.php';?>
     <div id='content'>
         <div id='content-wrapper'>
-            <?php if ($error == 1){ ?>
-            <div id="board-notify-frame">
-                    The topic you are looking for seems to not exist
-            </div>
-            <?php } else { ?>
-                <?php
+            <?php if ($error == 1){
+            echo"<div id='board-notify-frame'>
+                        The topic you are looking for seems to not exist
+                </div>";
+            } else {
                 $user_account = new account;
                 $user_account->construct(ucfirst(get_username_byid($thread_base['autor'])));
                     echo $thread_base['id'].'<br>';
@@ -44,11 +43,8 @@ if (isset($_GET['id'])){
                     echo $thread_base['date'].'<br>';
                     echo $user_account->avatar.'<br>';
                     echo $user_account->joindate.'<br>';
-                ?>
-            <?php } ?>
+            } ?>
         </div>
     </div>
 <script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
+<?php include 'global-footer.php'; ?>
