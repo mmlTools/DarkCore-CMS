@@ -1,5 +1,6 @@
-<?php define('DarkCoreCMS', TRUE);
-	if (isset($_GET['realm'])){
+<?php 
+	define('DarkCoreCMS', TRUE);
+	if (isset($_GET['realm'])) {
 		include 'header.php';
 		$realmid = $_GET['realm'];
 		$realminfo = new realm;
@@ -11,33 +12,34 @@
 				<div class='lastnews-head-text'><?php echo $realminfo->rm_name; ?> - Found <?php echo $realminfo->total_online; ?> Players Online</div>
 				<div class='frame-realm-panel'>
 				<div class="newsdivider"></div>
-					<?php if ($realminfo->total_online != 0){ ?>
-						<div id="online-players-table">
-						<div class="online-players-line" style="margin-bottom:10px;">
+					<?php if ($realminfo->total_online != 0){ 
+						echo "
+						<div id='online-players-table'>
+						<div class='online-players-line' style='margin-bottom:10px;'>
 							<div class='chlist-td' style='color:#fff;'>Char Name</div>
 							<div class='chlist-td' style='color:#fff;'>Race</div>
 							<div class='chlist-td' style='color:#fff;'>Class</div>
 							<div class='chlist-td' style='color:#fff;'>Level</div>
 							<div class='chlist-td' style='color:#fff;'>Rank</div>
-						</div>
-					<?php for ($i=0;$i<count($realminfo->charsonline['charguid']);$i++) {?>
-						<div class="online-players-line">
-							<div class='chlist-td' ><a id='rm-ch' href='character?c=<?php echo $realminfo->charsonline['charname'][$i];?>' style="color:#<?php echo char_name_color($realminfo->charsonline['class'][$i]); ?>;" class="skinnytip" data-text="<div class='miniinfo'>Check player stats</div>"><?php echo $realminfo->charsonline['charname'][$i]; ?></a></div>
-							<div class='chlist-td' style='color:#fff;'><?php echo race_strings($realminfo->charsonline['race'][$i]); ?>	<img style='float:left;margin-left:5px;' src='images/char/race/<?php echo $realminfo->charsonline['race'][$i];?>-<?php echo $realminfo->charsonline['gender'][$i];?>.gif' /></div>
-							<div class='chlist-td' style='color:#<?php echo char_name_color($realminfo->charsonline['class'][$i]); ?>;'><?php echo class_strings($realminfo->charsonline['class'][$i]); ?><img style='float:left;margin-left:5px;' src='images/char/class/<?php echo $realminfo->charsonline['class'][$i];?>.gif' /></div>
-							<div class='chlist-td' style='color:#fff;'><?php echo $realminfo->charsonline['level'][$i]; ?></div>
-							<div class='chlist-td' style='color:#fff;'><?php echo level_by_account($realminfo->charsonline['account'][$i]); ?></div>
-						</div>
-					<?php } ?>
-					<?php } else {?>
-					<div id="online-players-table">
-						<div class="gmalert" >There are no characters online at this moment</div>
-					</div>
-					<?php } ?>
-					</div>
-					<?php if ($realminfo->total_online > 7){ ?>
-					<div class="online-players-show">Show all online characters</div>
-					<?php } ?>
+						</div>";
+						for ($i=0;$i<count($realminfo->charsonline['charguid']);$i++) {
+							echo "<div class='online-players-line'>
+								<div class='chlist-td' ><a id='rm-ch' href='character?c=". echo $realminfo->charsonline['charname'][$i];."' style='color:#". echo char_name_color($realminfo->charsonline['class'][$i]); .";' class='skinnytip' data-text='<div class='miniinfo'>Check player stats</div>'>". echo $realminfo->charsonline['charname'][$i]; ."</a></div>
+								<div class='chlist-td' style='color:#fff;'>". echo race_strings($realminfo->charsonline['race'][$i]); ."	<img style='float:left;margin-left:5px;' src='images/char/race/". echo $realminfo->charsonline['race'][$i];."-". echo $realminfo->charsonline['gender'][$i];.".gif' /></div>
+								<div class='chlist-td' style='color:#". echo char_name_color($realminfo->charsonline['class'][$i]); .";'>". echo class_strings($realminfo->charsonline['class'][$i]); ."<img style='float:left;margin-left:5px;' src='images/char/class/". echo $realminfo->charsonline['class'][$i];.".gif' /></div>
+								<div class='chlist-td' style='color:#fff;'>". echo $realminfo->charsonline['level'][$i]; ."</div>
+								<div class='chlist-td' style='color:#fff;'>". echo level_by_account($realminfo->charsonline['account'][$i]); ."</div>
+							</div>";
+						}
+					} else {
+						echo"<div id='online-players-table'>
+							<div class='gmalert' >There are no characters online at this moment</div>
+						</div>";
+					}
+					echo "</div>";
+					if ($realminfo->total_online > 7){
+						echo"<div class='online-players-show'>Show all online characters</div>";
+					} ?>
 					<div id='user-box'>
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:24px;">TOTAL CHARACTERS - <?php echo $realminfo->total_characters; ?></div>
 						<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">CLASS STATISTICS</div>
@@ -178,11 +180,8 @@ $(document).ready(function(){
 
 </script>
 <script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
-<?php
-}
-else 
+<?php 
+	include 'global-footer.php';
+} else 
 	echo "<script> window.location.href = 'index';</script>"
 ?>

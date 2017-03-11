@@ -1,18 +1,21 @@
 <?php define('DarkCoreCMS', TRUE);
 	include 'header.php';
-	if (isset($_GET['c'])){$character = $_GET['c'];} if(character_exist($character)){
+	if (isset($_GET['c'])){
+		$character = $_GET['c'];
+	} 
+	if(character_exist($character)){
 	$charinfo->construct($character);
 	$charinfo->get_char_equipment($charinfo->charguid);
 ?>
 	<div id='content'>
 		<div id='character-left'>
 			<div class='left-character-panel'>
-				<div id='character-main-frame' style='background:url("images/class/<?php echo $charinfo->class;?>.png") no-repeat;'>
+				<div id='character-main-frame' style='background:url('images/class/<?php echo $charinfo->class;?>.png') no-repeat;'>
 					<div class='char-right-info1'>
 						<div class='tablecls1'>
-							<div class="itmicn">
+							<div class='itmicn'>
 								<?php if (isset($charinfo->data1[0])) {$helm = get_item_data($charinfo->data1[0]); ?>
-									<a href="" class="skinnytip" data-text="<div style='width:600px;'><img class='armory-itemicon' src='<?php echo geticon($helm['displayID'])?>' width='46' height='46' /><div class='item-frame'><?php echo return_item_string($helm['entry']); ?></div></div>">
+									<a href='' class="skinnytip" data-text="<div style='width:600px;'><img class='armory-itemicon' src='<?php echo geticon($helm['displayID'])?>' width='46' height='46' /><div class='item-frame'><?php echo return_item_string($helm['entry']); ?></div></div>">
 									<img class='armory-itemicon' src='<?php echo geticon($helm['displayID']); ?>' width='30' height='30' />
 									</a>
 								<?php } else {?>
@@ -289,10 +292,7 @@
 		</div>
 	</div>
 <script type="text/javascript">SkinnyTip.init();</script>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
-<?php
+<?php include 'global-footer.php';
 }
 else 
 	echo "<script> window.location.href = 'armory';</script>"

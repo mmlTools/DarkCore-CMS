@@ -1,1 +1,3 @@
-<?php if(!defined('DarkCoreCMS')) {header('Location: ../');} 
+<?php 
+	if(!defined('DarkCoreCMS')) 
+		header('Location: ../');

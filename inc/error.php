@@ -38,7 +38,6 @@
 			<a class='guide-thumb' href="../index">RETURN TO WEBSITE</a>
 		</div>
 	</div>
-	<?php include '../global-footer.php' ?>
+	
 </div>
-</body>
-</html>
+<?php include '../global-footer.php'; ?>

@@ -108,6 +108,4 @@ MAIN AUTHOR: Darksoke
 			</div>
 		</div>
 	</div>
-</body>
-<?php include 'global-footer.php' ?>
-</html>
+<?php include 'global-footer.php'; ?>

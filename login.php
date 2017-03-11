@@ -1,7 +1,9 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php';
-if (isset($_POST['login']))
-	do_login($_POST['login_username'],$_POST['login_password']);
-if (!isset($_SESSION['usr'])) { ?>
+<?php 
+	define('DarkCoreCMS', TRUE); 
+	include 'header.php';
+	if (isset($_POST['login']))
+		do_login($_POST['login_username'],$_POST['login_password']);
+	if (!isset($_SESSION['usr'])) { ?>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='user-box'>
@@ -27,9 +29,8 @@ if (!isset($_SESSION['usr'])) { ?>
 			</div>
 		</div>
 	</div>
-</body>
-<?php include 'global-footer.php' ?>
-<?php } else { 
-	echo "<script> window.load.href = 'user' </script>";
-} ?>
-</html>
+	<?php 
+		include 'global-footer.php';
+	} else { 
+		echo "<script> window.load.href = 'user' </script>";
+	} ?>

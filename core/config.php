@@ -1,4 +1,7 @@
-<?php if(!defined('DarkCoreCMS')) { header('Location: ../');} 
+<?php 
+	if(!defined('DarkCoreCMS')) { 
+		header('Location: ../');
+	} 
 //Website informations
 $website_title = "DarkCorE CMS";
 $website_description = "DarKcorE CMS is an Open Source work in progress Content Management System for Trinitycore released for free for our lovely emulation communities.";
@@ -25,7 +28,5 @@ function connect($shag,$sgsg,$gsg){
 		printf("Connect failed: %s\n", mysqli_connect_error());
 		exit();
 	}
-return $con;
+	return $con;
 }
-
-?>
