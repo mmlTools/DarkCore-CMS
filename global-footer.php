@@ -1,3 +1,4 @@
+</body>
 	<div id='footer'>
 		<div id='footer-right'>
 			<a href='index'>HOME</a> | 
@@ -12,3 +13,4 @@
 		</div>
 		<a href="http://www.mmltools.com/projects/darkcorecms"><div id="footer-creds"></div></a>
 	</div>
+</html>
