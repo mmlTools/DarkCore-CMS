@@ -6,7 +6,7 @@
 	if (isset($_POST['login']))
 		do_login($_POST['login_username'],$_POST['login_password']);
 	if (isset($_GET["errlogin"]))
-		echo "<div id='notify'>There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div";
+		echo "<div id='notify'>There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>";
 ?>
 	<div id='content'>
 		<div id='index-content-left'>
@@ -57,13 +57,13 @@
 					echo "<div class='lastnews'>
 						<div class='brokenhover'></div>
 							<div class='lastnews-left'>
-								<a href='board/topic?id=".echo $data_news->latest_topics_index[$i]['id'];".&page=1/".echo $data_news->latest_topics_index[$i]['title'];."' class='lastnews-left-title'>
-									<label class='skinnytip' data-text='<div class='miniinfo'>Read This</div>''>". echo $data_news->latest_topics_index[$i]['title']."</label><br>
-									<label style='color:#3CA4CE;'>Comments:</label>".echo total_comments($data_news->latest_topics_index[$i]['id'])."
+								<a href='board/topic?id=".$data_news->latest_topics_index[$i]['id']."&page=1/".$data_news->latest_topics_index[$i]['title']."' class='lastnews-left-title'>
+									<label class='skinnytip' data-text='<div class='miniinfo'>Read This</div>''>".$data_news->latest_topics_index[$i]['title']."</label><br>
+									<label style='color:#3CA4CE;'>Comments:</label>".total_comments($data_news->latest_topics_index[$i]['id'])."
 								</a>
 							</div>
 						<div class='lastnews-right'>
-							<a class='lastnews-right-text' href='board/topic?id=". echo $data_news->latest_topics_index[$i]['id'];."&page=1/". echo $data_news->latest_topics_index[$i]['title'];."'>Read All...</a>
+							<a class='lastnews-right-text' href='board/topic?id=".$data_news->latest_topics_index[$i]['id']."&page=1/".$data_news->latest_topics_index[$i]['title']."'>Read All...</a>
 						</div>
 					</div>";
 					} 
@@ -118,27 +118,27 @@
 						echo "
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This field represent your registrar email</div>'>
 							<div class='inforowdesc'>Email:</div>
-							<div class='inforowresult'>".echo $user_account->email."</div>
+							<div class='inforowresult'>".$user_account->email."</div>
 						</div>
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This field represent the last time when you logged ingame</div>'>
 							<div class='inforowdesc'>Session:</div>
-							<div class='inforowresult'>".echo $user_account->last_login."</div>
+							<div class='inforowresult'>".$user_account->last_login."</div>
 						</div>
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This field represent your last login IP</div>'>
 							<div class='inforowdesc'>Last IP:</div>
-							<div class='inforowresult'>".echo $user_account->last_ip."</div>
+							<div class='inforowresult'>".$user_account->last_ip."</div>
 						</div>
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This field represent your rank</div>'>
 							<div class='inforowdesc'>Rank:</div>
-							<div class='inforowresult' style='color:#".echo namecolor($user_account->gmlevel,$user_account->VipLevel)."'>".echo strtoupper(rankstring($user_account->gmlevel,$user_account->VipLevel))".</div>
+							<div class='inforowresult' style='color:#".namecolor($user_account->gmlevel,$user_account->VipLevel)."'>".strtoupper(rankstring($user_account->gmlevel,$user_account->VipLevel))."</div>
 						</div>
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This represent your total Vote Points</div>'>
 							<div class='inforowdesc'>Vote Points:</div>
-							<div class='inforowresult'>".echo $user_account->vp".</div>
+							<div class='inforowresult'>".$user_account->vp."</div>
 						</div>
 						<div id='inforow' class='skinnytip' data-text='<div class='miniinfo'>This represent your total Donation Points</div>'>
 							<div class='inforowdesc'>Donation Points:</div>
-							<div class='inforowresult'>".echo $user_account->dp."</div>
+							<div class='inforowresult'>".$user_account->dp."</div>
 						</div>";
 					} ?>
                 </div>
