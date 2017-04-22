@@ -66,6 +66,6 @@
 	</div>
 <?php 
 	include 'global-footer.php';
-	} else	echo "<script> window.location.href = 'user';</script>";
+	} else	echo "<script> window.location.href = 'user.php';</script>";
 ?>
 </html>

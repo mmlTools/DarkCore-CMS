@@ -15,8 +15,8 @@
                         <input type="password" style="display:none">
                         <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
 						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='register' /><div class='submit-submenu'>Register</div></a>
+						<input value='Login' name='login.php' id='submit' type='submit'>
+                        <a href='register.php' /><div class='submit-submenu'>Register</div></a>
                     </form>
 				</div>
 				<div class='reg-left-block'>
@@ -32,5 +32,5 @@
 	<?php 
 		include 'global-footer.php';
 	} else { 
-		echo "<script> window.load.href = 'user' </script>";
+		echo "<script> window.load.href = 'user.php' </script>";
 	} ?>

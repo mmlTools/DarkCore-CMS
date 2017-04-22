@@ -1,8 +1,8 @@
 <?php 
-	if (!isset($_SESSION)) { session_start(); } 
-	include "core/config.php";
+if (!isset($_SESSION)) { session_start(); } 
+include "core/config.php";
 foreach (glob("core/functions/*.php") as $filename){
-	include $filename;
+    include $filename;
 }
 if (isset($_SESSION['usr'])) {
 	$user_prw = $_SESSION['usr'];
@@ -41,18 +41,18 @@ if (isset($_GET['Logout']) && isset($_SESSION['usr'])){
 <div id='menu'>
 	<center>
 		<div id='menu-block'>
-			<a class='menu-item' href='index'>HOME</a>
-			<a class='menu-item' href='armory'>ARMORY</a>
-			<a class='menu-item' href='guides'>GUIDES & DOWNLOADS</a>
-			<a class='menu-item' href='forum'>FORUM <label style="font-size:10px;color:lime;">alpha</label></a>
-			<a class='menu-item' href='rules'>RULES</a>
+			<a class='menu-item' href='index.php'>HOME</a>
+			<a class='menu-item' href='armory.php'>ARMORY</a>
+			<a class='menu-item' href='guides.php'>GUIDES & DOWNLOADS</a>
+			<a class='menu-item' href='forum.php'>FORUM <label style="font-size:10px;color:lime;">alpha</label></a>
+			<a class='menu-item' href='rules.php'>RULES</a>
 			<?php if (isset($_SESSION['usr'])){
-				echo "<a class='menu-item' href='store'>STORE <label style='font-size:10px;color:lime;'>alpha</label></a>";
-				echo "<a class='menu-item' href='user'>ACCOUNT PANEL</a>";
+				echo "<a class='menu-item' href='store.php'>STORE <label style='font-size:10px;color:lime;'>alpha</label></a>";
+				echo "<a class='menu-item' href='user.php'>ACCOUNT PANEL</a>";
 				echo "<a class='menu-item' href='?Logout'>LOGOUT</a>";
 			} else{
-				echo "<a class='menu-item' href='login'>LOGIN</a>"; 
-				echo "<a class='menu-item' href='register'>REGISTER</a>"; 
+				echo "<a class='menu-item' href='login.php'>LOGIN</a>"; 
+				echo "<a class='menu-item' href='register.php'>REGISTER</a>"; 
 			}?>
 		</div>
 	</center>
