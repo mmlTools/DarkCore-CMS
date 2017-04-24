@@ -22,13 +22,8 @@
 					<form action='' method='post' autocomplete='off' enctype='multipart/form-data'>
                         <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
 						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-<<<<<<< HEAD:pages/login.php
-						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='modules/register' /><div class='submit-submenu'>Register</div></a>
-=======
 						<input value='Login' name='login.php' id='submit' type='submit'>
                         <a href='register.php' /><div class='submit-submenu'>Register</div></a>
->>>>>>> origin/master:login.php
                     </form>
 				</div>
 				<div class='reg-left-block'>
@@ -41,12 +36,4 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD:pages/login.php
-<?php } ?>
-=======
-	<?php 
-		include 'global-footer.php';
-	} else { 
-		echo "<script> window.load.href = 'user.php' </script>";
-	} ?>
->>>>>>> origin/master:login.php
+<?php } ?> 
