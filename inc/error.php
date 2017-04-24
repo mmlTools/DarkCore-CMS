@@ -6,9 +6,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="GamingZeta WOTLK 3.3.5a 2 Realms PVP/PVE High Stats , play for fun!">
 	<meta name="keywords" content="Gaming,GamingZeta,3.3.5a,5.4.8,6.2.2,GamingZeta,WoW,WOTLK,Warlords of Draenor,MOP,WoD,255,level,server,GamingZeta.com,gaming.com,gaminzeta.info,free servers,Warlords of Draenor private server,free wow server,wow forum,mmorpg server,80 instant,PVP,PVE,255 level,largest server, custom, instances, cuztom zones, events, quality server, quality server,">
-	<link rel="stylesheet" type="text/css" href="../css/style.css" title="Default Styles" media="screen">
-	<link rel="stylesheet" type="text/css" href="../css/armory.css" title="Default Styles" media="screen">
-	<script type="text/javascript" src="../js/skinnytip.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style/css/style.css" title="Default Styles" media="screen">
+	<link rel="stylesheet" type="text/css" href="../style/css/armory.css" title="Default Styles" media="screen">
+	<script type="text/javascript" src="../style/js/skinnytip.js"></script>
 
 	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
 </head>
