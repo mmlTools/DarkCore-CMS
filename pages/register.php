@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../'); if (!isset($_SESSION['usr'])) {
+<?php if (!defined("DARKCORECMS") || isset($_SESSION['usr'])) header('Location: ../');
 	$registration = new Registration;
 	$first=rand(1,10);
 	$second=rand(1,10);
@@ -73,5 +73,3 @@
 			</div>
 		</div>
 	</div>
-<?php } ?>
-</html>

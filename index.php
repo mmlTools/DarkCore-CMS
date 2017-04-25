@@ -7,8 +7,11 @@ foreach (glob("engine/functions/*.php") as $filename)
 {
 	include $filename;
 }
-if (isset($_SESSION['usr']))
+$text_parser = new BbParser;
+if (isset($_SESSION['usr'])) {
 	$account = new Account($_SESSION['usr']);
+	$account = $account->account;
+}
 if (!isset($_GET['page']))
 	$page = 'home';
 else{

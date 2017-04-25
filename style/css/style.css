@@ -333,7 +333,8 @@ display: inline-block;
  margin-bottom: 15px;
  }
 #main-tools ul{
-    list-style-image: url("../images/liarrow.png");
+    list-style-image: url("../images/icons/liarrow.png");
+    margin-left: 25px;
 }
 
 .main-tools-box{

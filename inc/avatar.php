@@ -1,5 +1,0 @@
-<?php
-
-echo 'YOU SELECTED THE AVATAR FUNCTION';
-
-?>

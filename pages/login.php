@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../'); if (!isset($_SESSION['usr'])) {
+<?php if (!defined("DARKCORECMS") || isset($_SESSION['usr'])) header('Location: ../');
 	$login = new Login;
 	if (isset($_POST['login']))
 		$login->do_login($_POST['login_username'], $_POST['login_password']);
@@ -22,8 +22,8 @@
 					<form action='' method='post' autocomplete='off' enctype='multipart/form-data'>
                         <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
 						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-						<input value='Login' name='login.php' id='submit' type='submit'>
-                        <a href='register.php' /><div class='submit-submenu'>Register</div></a>
+						<input value='Login' name='login' id='submit' type='submit'>
+                        <a href='index?page=register' /><div class='submit-submenu'>Register</div></a>
                     </form>
 				</div>
 				<div class='reg-left-block'>
@@ -36,4 +36,3 @@
 			</div>
 		</div>
 	</div>
-<?php } ?> 

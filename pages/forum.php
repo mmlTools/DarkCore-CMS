@@ -1,13 +1,6 @@
-    <?php 
-        define('DarkCoreCMS', TRUE);
-        include 'header.php';
-        if (isset($_SESSION['usr'])) {
-            $user_prw = $_SESSION['usr'];
-            $user_account->construct(ucfirst($user_prw));
-        }
-    ?>
+<?php if (!defined("DARKCORECMS")) header('Location: ../'); ?>
     <div id="notify">Builtin forum module is not coded yet</div>
-    <div id='content'>
+<?php /*   <div id='content'>
         <div id="forum-left">
             <?php $board = new BoardData;
             $forums = new ForumsData;
@@ -147,5 +140,4 @@
     </div>
 </div>
 </div>
-<script type="text/javascript">SkinnyTip.init();</script>
-<?php include 'global-footer.php'; ?>
+*/ ?>

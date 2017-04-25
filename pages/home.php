@@ -13,9 +13,9 @@
                 <h1 class="main-tools-head-text">WELCOME TO <?php echo strtoupper($website_title) ?></h1>
                 <div class="main-tools-description"><?php echo $website_description ?></div>
                 <ul>
-                    <li class="main-tools-li"><a href="modules/armory">ARMORY</a></li>
-                    <li class="main-tools-li"><a href="modules/guides">GUIDES & DOWNLOADS</a></li>
-                    <li class="main-tools-li"><a href="modules/rules">RULES</a></li>
+                    <li class="main-tools-li"><a href="index?page=armory">ARMORY</a></li>
+                    <li class="main-tools-li"><a href="index?page=guides">GUIDES</a></li>
+                    <li class="main-tools-li"><a href="index?page=rules">RULES</a></li>
                 </ul>
             </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="rmlist">set realmlist <?php echo $realmlist ?></div>
         <div class="realmstat">
             <a href="modules/realm?id=1">
-                <img class="gversion" src='style/images/r-wotlk.png' height='19' alt='wotlk icon' />
+                <img class="gversion" src='style/images/icons/r-wotlk.png' height='19' alt='wotlk icon' />
                 <div class="realmname">
                     <a href='' class='realmnamelink'>DarkCore CMS</a>
                 </div>
@@ -105,4 +105,3 @@
         })
     }
 </script>
-<script type="text/javascript">SkinnyTip.init();</script>
