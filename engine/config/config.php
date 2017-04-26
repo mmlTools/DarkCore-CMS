@@ -10,6 +10,7 @@ $limit=21; //Set how many results to show / page
 //Server Config
 $realmlist="cms.darkcore.com";
 
+//database connection requirements
 $database = array(
 	"db_host" => '127.0.0.1',
 	"db_username" => 'root',
@@ -17,7 +18,13 @@ $database = array(
 	"auth_db" => 'auth',
 	"web_db" => 'mysite'
 );
-
+//Remote access for item store requirements
+$remote_ac = array(
+	"ra_host" => '127.0.0.1',
+	"ra_port" => '3443',
+	"ra_user" => 'Admin',
+	"ra_password" => 'Admin'
+);
 $realms = array(
 	"realm_id" => '1',
 	"characters_db" => 'characters',
