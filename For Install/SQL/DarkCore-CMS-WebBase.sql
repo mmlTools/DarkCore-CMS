@@ -356,6 +356,24 @@ DELETE FROM `guides`;
 /*!40000 ALTER TABLE `guides` DISABLE KEYS */;
 /*!40000 ALTER TABLE `guides` ENABLE KEYS */;
 
+-- Dumping structure for table mysite.inbox
+DROP TABLE IF EXISTS `inbox`;
+CREATE TABLE IF NOT EXISTS `inbox` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from` varchar(50) NOT NULL,
+  `to` int(11) NOT NULL,
+  `subject` tinytext NOT NULL,
+  `body` text NOT NULL,
+  `date` int(11) NOT NULL,
+  `viewed` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mysite.inbox: ~0 rows (approximately)
+DELETE FROM `inbox`;
+/*!40000 ALTER TABLE `inbox` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inbox` ENABLE KEYS */;
+
 -- Dumping structure for table mysite.news
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
@@ -420,14 +438,59 @@ DELETE FROM `rules_groups`;
 /*!40000 ALTER TABLE `rules_groups` DISABLE KEYS */;
 /*!40000 ALTER TABLE `rules_groups` ENABLE KEYS */;
 
+-- Dumping structure for table mysite.store_cart
+DROP TABLE IF EXISTS `store_cart`;
+CREATE TABLE IF NOT EXISTS `store_cart` (
+  `account_id` int(11) NOT NULL,
+  `character_id` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  PRIMARY KEY (`account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mysite.store_cart: ~0 rows (approximately)
+DELETE FROM `store_cart`;
+/*!40000 ALTER TABLE `store_cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store_cart` ENABLE KEYS */;
+
+-- Dumping structure for table mysite.store_items
+DROP TABLE IF EXISTS `store_items`;
+CREATE TABLE IF NOT EXISTS `store_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL DEFAULT '0',
+  `vp_price` int(11) NOT NULL DEFAULT '0',
+  `dp_price` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mysite.store_items: ~0 rows (approximately)
+DELETE FROM `store_items`;
+/*!40000 ALTER TABLE `store_items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store_items` ENABLE KEYS */;
+
+-- Dumping structure for table mysite.store_logs
+DROP TABLE IF EXISTS `store_logs`;
+CREATE TABLE IF NOT EXISTS `store_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `body` text NOT NULL,
+  `date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mysite.store_logs: ~0 rows (approximately)
+DELETE FROM `store_logs`;
+/*!40000 ALTER TABLE `store_logs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store_logs` ENABLE KEYS */;
+
 -- Dumping structure for table mysite.vote_logs
 DROP TABLE IF EXISTS `vote_logs`;
 CREATE TABLE IF NOT EXISTS `vote_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `account` int(11) NOT NULL,
   `site` int(11) NOT NULL,
-  `voted` bigint(20) DEFAULT NULL,
-  `expire` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`account`,`site`)
+  `voted` bigint(20) NOT NULL,
+  `expire` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`,`site`,`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table mysite.vote_logs: ~0 rows (approximately)
