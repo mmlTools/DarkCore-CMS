@@ -19,16 +19,16 @@ function rank_string($rank){
 function char_name_color($class){
     switch ($class)
     {
-        case 6: return "C41F3B";break;
-        case 11: return "FF7D0A";break;
-        case 3: return "ABD473";break;
-        case 8: return "69CCF0";break;
-        case 2: return "F58CBA";break;
-        case 5: return "FFFFFF";break;
-        case 4: return "FFF569";break;
-        case 7: return "0070DE";break;
-        case 9: return "9482C9";break;
         case 1: return "C79C6E";break;
+        case 2: return "F58CBA";break;
+        case 3: return "ABD473";break;
+        case 4: return "FFF569";break;
+        case 5: return "FFFFFF";break;
+        case 6: return "C41F3B";break;
+        case 7: return "0070DE";break;
+        case 8: return "69CCF0";break;
+        case 9: return "9482C9";break;    
+        case 11: return "FF7D0A";break;
     }
 }
 function class_strings($class){
