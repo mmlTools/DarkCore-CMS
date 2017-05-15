@@ -27,11 +27,12 @@ function encrypt($username, $password)
 }
 function logout()
 {
-    session_unset();
+    session_destroy();
     redirect("index");
 }
 function redirect($url){
-    echo "<script type='text/javascript'>window.location.href = '".$url."'</script>";
+    $mainPath = $_SERVER['REQUEST_URI'];
+    Location("Location: ".$mainPath."$url);
 }
 function get_countries_list(){
     global $database;
