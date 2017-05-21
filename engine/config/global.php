@@ -26,24 +26,18 @@ function encrypt($username, $password)
     $password = strtoupper($password);
     return $password;
 }
-function logout()
-{
+
+function logout(){
     session_unset();
     redirect("index");
 }
-function redirect($url){
-    //redirect to a specified path
-    $mainPath = $_SERVER['REQUEST_URI'];
-    $url = "Location: {$mainPath}{$url}";
-    header($url);
-    session_destroy();
-    redirect("index");
-}
+
 function redirect($url){
     $mainPath = $_SERVER['REQUEST_URI'];
     $url = "Location: {$mainPath}{$url}";
     header($url);
 }
+
 function get_countries_list(){
     //return countries strings list from countries table
     //establish a database connection and prepare the sql query
