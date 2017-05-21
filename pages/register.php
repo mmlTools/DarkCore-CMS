@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS") || isset($_SESSION['usr'])) header('Location: ../');
+<?php if (!defined("DARKCORECMS") || isset($_SESSION['usr'])) redirect("../");
 	$registration = new Registration;
 	$first=rand(1,10);
 	$second=rand(1,10);

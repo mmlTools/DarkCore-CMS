@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../../');
+<?php if (!defined("DARKCORECMS")) redirect("../../");
 class Mailing{
     function sendInbox($from, $to, $subject, $body){
         global $database;

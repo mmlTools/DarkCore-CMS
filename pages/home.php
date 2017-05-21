@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../');
+<?php if (!defined("DARKCORECMS")) redirect("../");
     $login = new Login;
     if (isset($_POST['login']))
         $login->do_login($_POST['login_username'], $_POST['login_password']);

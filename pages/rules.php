@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../'); ?>
+<?php if (!defined("DARKCORECMS")) redirect("../"); ?>
 	<div id='content'>
 		<div id='errors-box'>
 			<label class="ok"><?php echo "This module is under development" ?></label>

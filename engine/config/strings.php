@@ -1,5 +1,6 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../../');
+<?php if (!defined("DARKCORECMS")) redirect("../../");
 function rank_string($rank){
+    //return player's rank string based on his rank id
     switch($rank){
         case 0: return "Player"; break;
         case 4: return "V.I.P"; break;
@@ -17,6 +18,7 @@ function rank_string($rank){
     }
 }
 function char_name_color($class){
+    //return class specific color for character names
     switch ($class)
     {
         case 6: return "C41F3B";break;
@@ -32,6 +34,7 @@ function char_name_color($class){
     }
 }
 function class_strings($class){
+    //return character class string based on class id
     switch($class){
         case 1: return 'Warrior'; break;
         case 2: return 'Paladin'; break;
@@ -47,6 +50,7 @@ function class_strings($class){
 }
 
 function race_strings($race){
+    //return character race string based on character race id
     switch($race){
         case 1: return 'Human'; break;
         case 2: return 'Orc'; break;
@@ -63,10 +67,11 @@ function race_strings($race){
     }
 }
 function rank_color($username,$rank,$icon = 0){
+    //return player name color based on curent rank |deprecated and need rewrite|
     $color = '#FFFFFF';
     if ($icon == 0) {
-        $icon = '<img class="avatar-name" src="style/images/staff.png" alt="Staff Icon"/>';
-        $vip = '<img class="avatar-name" src="style/images/vip.png" alt="Vip Icon"/>';
+        $icon = '<img class="avatar-name" src="style/images/icons/staff.png" alt="Staff Icon"/>';
+        $vip = '<img class="avatar-name" src="style/images/icons/vip.png" alt="Vip Icon"/>';
     }
     else{
         $icon = '';

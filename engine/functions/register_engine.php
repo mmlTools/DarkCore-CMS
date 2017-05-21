@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../../');
+<?php if (!defined("DARKCORECMS")) redirect("../../");
 class Registration{
     public $registration_errors = array();
     function register_user($username,$_new_password,$re_password,$email,$re_email,$country,$age,$foundus,$robot1,$total = 0,$robot2,$checktext = NULL){

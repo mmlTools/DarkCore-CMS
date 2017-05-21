@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS") || !isset($_GET['id'])) header('Location: ../');
+<?php if (!defined("DARKCORECMS") || !isset($_GET['id'])) redirect("../");
 $news_engine = new News;
 $news = $news_engine->news;
 ?>

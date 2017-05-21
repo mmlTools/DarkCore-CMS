@@ -1,4 +1,4 @@
-<?php if (!defined("DARKCORECMS")) header('Location: ../'); ?>
+<?php if (!defined("DARKCORECMS")) redirect("../"); ?>
     <div id="notify">Builtin forum module is not coded yet</div>
 <?php /*   <div id='content'>
         <div id="forum-left">

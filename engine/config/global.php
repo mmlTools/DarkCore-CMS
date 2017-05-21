@@ -21,23 +21,32 @@ function date_string($dateint, $format = "Y-m-d H:i:s"){
 }
 function encrypt($username, $password)
 {
+    //encryption method for passwords
     $password = sha1(strtoupper($username) . ":" . strtoupper($password));
     $password = strtoupper($password);
     return $password;
 }
 function logout()
 {
+    //log out function for website
     session_unset();
     redirect("index");
 }
 function redirect($url){
-    echo "<script type='text/javascript'>window.location.href = '".$url."'</script>";
+    //redirect to a specified path
+    $mainPath = $_SERVER['REQUEST_URI'];
+    $url = "Location: {$mainPath}{$url}";
+    header($url);
 }
 function get_countries_list(){
+    //return countries strings list from countries table
+    //establish a database connection and prepare the sql query
     global $database;
     $con = connect($database['web_db']);
     $sql = "SELECT * FROM `countries`";
     $countries = array();
+
+    //execute the query and return the countries list
     if ($stmt = $con->prepare($sql)){
         $stmt->execute();
         $result = $stmt->get_result();
