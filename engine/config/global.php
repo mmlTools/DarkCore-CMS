@@ -28,8 +28,6 @@ function encrypt($username, $password)
 }
 function logout()
 {
-<<<<<<< HEAD
-    //log out function for website
     session_unset();
     redirect("index");
 }
@@ -38,14 +36,13 @@ function redirect($url){
     $mainPath = $_SERVER['REQUEST_URI'];
     $url = "Location: {$mainPath}{$url}";
     header($url);
-=======
     session_destroy();
     redirect("index");
 }
 function redirect($url){
     $mainPath = $_SERVER['REQUEST_URI'];
-    Location("Location: ".$mainPath."$url);
->>>>>>> 7d49b50e2d695ff2d084fe039a7d979de4ded8f3
+    $url = "Location: {$mainPath}{$url}";
+    header($url);
 }
 function get_countries_list(){
     //return countries strings list from countries table
