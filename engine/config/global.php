@@ -32,7 +32,8 @@ function logout()
 }
 function redirect($url){
     $mainPath = $_SERVER['REQUEST_URI'];
-    Location("Location: ".$mainPath."$url");
+    $url = "Location: {$mainPath}{$url}";
+    Location($url);
 }
 function get_countries_list(){
     global $database;
